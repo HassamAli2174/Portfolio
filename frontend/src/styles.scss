@@ -1,1 +1,274 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global theme, based on the "Personal" BootstrapMade template palette. */
+
+:root {
+  --bg: #040404;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --accent: #18d26e;
+  --accent-hover: #35e888;
+  --accent-2: #12b3d6;
+  --accent-gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+  --radius: 14px;
+  --shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.8);
+  --font-body: 'Open Sans', sans-serif;
+  --font-heading: 'Raleway', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Background photo with a soft vignette so text stays readable. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(24, 210, 110, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(4, 4, 4, 0.55), rgba(4, 4, 4, 0.92)),
+    var(--bg) url('/assets/img/bg.jpg') top right / cover no-repeat;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin: 0 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--accent);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 10px;
+
+  &:hover {
+    background: var(--accent);
+  }
+}
+
+/* ---------- Shared building blocks ---------- */
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.page {
+  padding: 40px 0 60px;
+  animation: page-in 0.6s var(--ease) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.page-block + .page-block {
+  margin-top: 70px;
+}
+
+.section-title {
+  margin-bottom: 28px;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+
+    &::after {
+      content: '';
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+  }
+
+  p {
+    margin: 6px 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #fff 40%, var(--text-muted));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.35s var(--ease),
+    border-color 0.35s,
+    background 0.35s;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(24, 210, 110, 0.5);
+  background: var(--surface-strong);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 26px;
+  border-radius: 999px;
+  border: 0;
+  font: 600 15px var(--font-body);
+  cursor: pointer;
+  color: #04140b;
+  background: var(--accent-gradient);
+  box-shadow: 0 10px 25px -10px rgba(24, 210, 110, 0.7);
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s,
+    opacity 0.25s;
+
+  &:hover {
+    color: #04140b;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -12px rgba(24, 210, 110, 0.85);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+  }
+
+  &.btn-ghost {
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--border);
+    box-shadow: none;
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  }
+}
+
+.chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(24, 210, 110, 0.1);
+  border: 1px solid rgba(24, 210, 110, 0.25);
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.loading-state {
+  min-height: 40vh;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
