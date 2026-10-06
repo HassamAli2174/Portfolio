@@ -10,5 +10,21 @@ export const routes: Routes = [
     title: title('About'),
     loadComponent: () => import('./pages/about/about.component').then((m) => m.AboutComponent),
   },
+  {
+    path: 'resume',
+    title: title('Resume'),
+    loadComponent: () => import('./pages/resume/resume.component').then((m) => m.ResumeComponent),
+  },
+  {
+    path: 'portfolio',
+    title: title('Portfolio'),
+    loadComponent: () => import('./pages/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
+  },
+  {
+    // The page sets its own title once the project has loaded.
+    path: 'portfolio/:slug',
+    loadComponent: () =>
+      import('./pages/project-detail/project-detail.component').then((m) => m.ProjectDetailComponent),
+  },
   { path: '**', redirectTo: '' },
 ];

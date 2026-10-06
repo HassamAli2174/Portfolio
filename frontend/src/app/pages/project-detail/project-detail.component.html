@@ -1,0 +1,128 @@
+@if (!loaded()) {
+  <div class="loading-state"><div class="spinner" aria-label="Loading"></div></div>
+} @else if (project(); as project) {
+  <article class="page container">
+    <a class="back" routerLink="/portfolio"><i class="bi bi-arrow-left"></i> All projects</a>
+
+    <header class="title">
+      <span class="category"><i class="bi" [class]="icons[project.category]"></i>{{ labels[project.category] }}</span>
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.summary }}</p>
+    </header>
+
+    <div class="layout">
+      <div class="gallery">
+        @if (project.images.length) {
+          <div class="stage card">
+            <button type="button" class="stage-image" (click)="lightboxIndex.set(selected())" aria-label="Enlarge image">
+              <img [src]="project.images[selected()]" [alt]="project.title + ' screenshot ' + (selected() + 1)" />
+              <span class="zoom-hint"><i class="bi bi-arrows-fullscreen"></i></span>
+            </button>
+            @if (project.images.length > 1) {
+              <button type="button" class="nav prev" aria-label="Previous image" (click)="step(-1)">
+                <i class="bi bi-chevron-left"></i>
+              </button>
+              <button type="button" class="nav next" aria-label="Next image" (click)="step(1)">
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            }
+          </div>
+
+          @if (project.images.length > 1) {
+            <ul class="thumbs">
+              @for (image of project.images; track image; let i = $index) {
+                <li>
+                  <button
+                    type="button"
+                    [class.active]="i === selected()"
+                    [attr.aria-label]="'Show image ' + (i + 1)"
+                    [attr.aria-pressed]="i === selected()"
+                    (click)="selected.set(i)"
+                  >
+                    <img [src]="image" alt="" loading="lazy" />
+                  </button>
+                </li>
+              }
+            </ul>
+          }
+        } @else {
+          <app-project-cover class="stage card" [project]="project" />
+        }
+      </div>
+
+      <aside class="info card">
+        <h3>Project information</h3>
+        <dl>
+          <div>
+            <dt>Category</dt>
+            <dd>{{ project.type }}</dd>
+          </div>
+          @if (project.client) {
+            <div>
+              <dt>Client</dt>
+              <dd>{{ project.client }}</dd>
+            </div>
+          }
+          @if (project.date) {
+            <div>
+              <dt>Project date</dt>
+              <dd>{{ project.date | date: 'd MMMM y' }}</dd>
+            </div>
+          }
+        </dl>
+        <ul class="tech">
+          @for (tech of project.tech; track tech) {
+            <li class="chip">{{ tech }}</li>
+          }
+        </ul>
+        @if (project.url) {
+          <a class="btn" [href]="project.url" target="_blank" rel="noopener">
+            View project <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        }
+      </aside>
+    </div>
+
+    <section class="description">
+      @for (paragraph of project.description; track $index) {
+        <p>{{ paragraph }}</p>
+      }
+    </section>
+
+    @if (project.highlights.length) {
+      <section>
+        <h3 class="sub-title">Key features</h3>
+        <div class="highlights">
+          @for (highlight of project.highlights; track highlight.title; let i = $index) {
+            <div class="highlight card card-hover" [style.--i]="i">
+              <h4><i class="bi bi-check2-circle"></i>{{ highlight.title }}</h4>
+              <p>{{ highlight.text }}</p>
+            </div>
+          }
+        </div>
+      </section>
+    }
+
+    @if (neighbours(); as n) {
+      <nav class="pager" aria-label="More projects">
+        <a [routerLink]="['/portfolio', n.prev.slug]" class="card card-hover">
+          <span><i class="bi bi-arrow-left"></i> Previous</span>
+          <strong>{{ n.prev.title }}</strong>
+        </a>
+        <a [routerLink]="['/portfolio', n.next.slug]" class="card card-hover next">
+          <span>Next <i class="bi bi-arrow-right"></i></span>
+          <strong>{{ n.next.title }}</strong>
+        </a>
+      </nav>
+    }
+  </article>
+
+  <app-lightbox [images]="project.images" [label]="project.title" [(index)]="lightboxIndex" />
+} @else {
+  <section class="page container not-found">
+    <i class="bi bi-search"></i>
+    <h2>Project not found</h2>
+    <p>The project “{{ slug() }}” doesn’t exist or has been removed.</p>
+    <a class="btn" routerLink="/portfolio"><i class="bi bi-arrow-left"></i> Back to portfolio</a>
+  </section>
+}
