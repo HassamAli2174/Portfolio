@@ -1,0 +1,75 @@
+@if (portfolio(); as data) {
+  @let p = data.profile;
+  <section class="page container">
+    <div class="section-title heading">
+      <div>
+        <h2>Resume</h2>
+        <p>Check my resume</p>
+      </div>
+      <a class="btn" [href]="p.resumeUrl" target="_blank" rel="noopener"><i class="bi bi-download"></i> Download PDF</a>
+    </div>
+
+    <div class="columns">
+      <div>
+        <h3 class="resume-title"><i class="bi bi-person-badge"></i> Summary</h3>
+        <div class="card summary">
+          <h4>{{ p.name }}</h4>
+          <p class="role">{{ p.title }}</p>
+          <p><em>{{ p.summary }}</em></p>
+          <ul class="contact">
+            <li><i class="bi bi-geo-alt"></i>{{ p.address }}</li>
+            <li>
+              <i class="bi bi-telephone"></i><a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a>
+            </li>
+            <li><i class="bi bi-envelope"></i><a [href]="'mailto:' + p.email">{{ p.email }}</a></li>
+          </ul>
+        </div>
+
+        @if (data.highlights.length) {
+          <h3 class="resume-title"><i class="bi bi-stars"></i> Highlights</h3>
+          <ul class="card highlights">
+            @for (highlight of data.highlights; track highlight) {
+              <li><i class="bi bi-check2-circle"></i>{{ highlight }}</li>
+            }
+          </ul>
+        }
+
+        <h3 class="resume-title"><i class="bi bi-mortarboard"></i> Education</h3>
+        <ol class="timeline">
+          @for (item of data.education; track item.title) {
+            <li>
+              <h4>{{ item.title }}</h4>
+              <span class="period">{{ item.period }}</span>
+              <p><em>{{ item.institution }}</em></p>
+            </li>
+          }
+        </ol>
+      </div>
+
+      <div>
+        <h3 class="resume-title"><i class="bi bi-briefcase"></i> Work Experience</h3>
+        <ol class="timeline">
+          @for (job of data.experience; track job.company + job.period) {
+            <li>
+              <h4>{{ job.role }}</h4>
+              <span class="period">{{ job.period }}</span>
+              <p class="company">
+                <em>{{ job.company }}</em>
+                @if (job.location) {
+                  <span class="location"><i class="bi bi-geo-alt"></i>{{ job.location }}</span>
+                }
+              </p>
+              <ul>
+                @for (point of job.highlights; track point) {
+                  <li>{{ point }}</li>
+                }
+              </ul>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </section>
+} @else {
+  <div class="loading-state"><div class="spinner" aria-label="Loading"></div></div>
+}
