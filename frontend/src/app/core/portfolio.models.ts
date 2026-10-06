@@ -55,7 +55,7 @@ export interface Experience {
   role: string;
   period: string;
   company: string;
-  location: string;
+  location: string | null;
   highlights: string[];
 }
 

@@ -262,6 +262,17 @@
         "Designed pixel-perfect UI/UX in Flutter based on Figma wireframes and Material Design guidelines.",
         "Integrated REST APIs and managed asynchronous data flows with Streams/Futures."
       ]
+    },
+    {
+      "role": "Software Engineer",
+      "period": "Dec 2022 - Mar 2023",
+      "company": "Fortify",
+      "location": null,
+      "highlights": [
+        "Implemented asynchronous programming techniques to handle API calls.",
+        "Used libraries like Axios and the Fetch API for secure and efficient data fetching.",
+        "Successfully integrated third-party APIs into applications."
+      ]
     }
   ],
   "projects": [
