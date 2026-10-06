@@ -113,46 +113,38 @@
 
 .skills {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
 }
 
-.skill-head {
-  display: flex;
-  justify-content: space-between;
-  font: 600 15px var(--font-heading);
-  text-transform: uppercase;
-  margin-bottom: 8px;
+.skill-group {
+  padding: 22px 24px;
+  animation: page-in 0.5s var(--ease) both;
+  animation-delay: calc(var(--i) * 60ms);
 
-  .val {
-    color: var(--accent);
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font: 600 15px var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+
+    i {
+      color: var(--accent);
+      font-size: 20px;
+    }
   }
-}
 
-.bar {
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  width: 0;
-  border-radius: inherit;
-  background: var(--accent-gradient);
-  transition: width 1.2s var(--ease);
-}
-
-.skills.in-view .fill {
-  width: var(--level);
-}
-
-.skill small {
-  display: block;
-  margin-top: 6px;
-  color: var(--text-muted);
-  font-size: 13px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 /* ---------- Interests ---------- */
@@ -201,8 +193,7 @@
     max-width: 320px;
   }
 
-  .facts,
-  .skills {
+  .facts {
     grid-template-columns: 1fr;
   }
 }

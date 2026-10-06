@@ -33,10 +33,10 @@ export interface Stat {
   label: string;
 }
 
-export interface Skill {
+export interface SkillGroup {
   name: string;
-  level: number;
-  description: string;
+  icon: string;
+  items: string[];
 }
 
 export interface Interest {
@@ -55,6 +55,7 @@ export interface Experience {
   role: string;
   period: string;
   company: string;
+  location: string;
   highlights: string[];
 }
 
@@ -68,10 +69,11 @@ export interface Project {
   title: string;
   category: ProjectCategory;
   type: string;
-  client: string;
-  date: string;
+  client: string | null;
+  date: string | null;
   url: string | null;
-  cover: string;
+  /** Null renders a generated placeholder cover. */
+  cover: string | null;
   images: string[];
   summary: string;
   description: string[];
@@ -82,7 +84,8 @@ export interface Project {
 export interface Portfolio {
   profile: Profile;
   stats: Stat[];
-  skills: Skill[];
+  skillGroups: SkillGroup[];
+  highlights: string[];
   interests: Interest[];
   education: Education[];
   experience: Experience[];
