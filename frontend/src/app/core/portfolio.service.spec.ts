@@ -27,11 +27,11 @@ describe('PortfolioService', () => {
 
   afterEach(() => http.verify());
 
-  it('loads from the API and sorts projects newest first', () => {
+  it('loads from the API, keeping the configured project order', () => {
     service.portfolio();
     http.expectOne('/api/portfolio').flush(portfolio);
 
-    expect(service.projects().map((p) => p.slug)).toEqual(['new', 'old']);
+    expect(service.projects().map((p) => p.slug)).toEqual(['old', 'new']);
     expect(service.project('old')?.date).toBe('2023-01-01');
   });
 

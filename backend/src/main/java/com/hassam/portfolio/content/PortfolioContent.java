@@ -10,7 +10,8 @@ import java.util.List;
 public record PortfolioContent(
         Profile profile,
         List<Stat> stats,
-        List<Skill> skills,
+        List<SkillGroup> skillGroups,
+        List<String> highlights,
         List<Interest> interests,
         List<Education> education,
         List<Experience> experience,
@@ -41,7 +42,7 @@ public record PortfolioContent(
     public record Stat(String icon, int value, String label) {
     }
 
-    public record Skill(String name, int level, String description) {
+    public record SkillGroup(String name, String icon, List<String> items) {
     }
 
     public record Interest(String name, String icon, String color) {
@@ -50,7 +51,7 @@ public record PortfolioContent(
     public record Education(String title, String period, String institution) {
     }
 
-    public record Experience(String role, String period, String company, List<String> highlights) {
+    public record Experience(String role, String period, String company, String location, List<String> highlights) {
     }
 
     public record Project(

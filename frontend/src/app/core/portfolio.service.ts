@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, catchError, map, shareReplay } from 'rxjs';
+import { Observable, catchError, shareReplay } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { ContactMessage, Portfolio, Project, ProjectCategory } from './portfolio.models';
@@ -18,7 +18,6 @@ export class PortfolioService {
     .get<Portfolio>(`${environment.apiUrl}/api/portfolio`)
     .pipe(
       catchError(() => this.http.get<Portfolio>('data/portfolio.json')),
-      map(sortProjects),
       shareReplay(1),
     );
 
@@ -33,11 +32,6 @@ export class PortfolioService {
   sendMessage(message: ContactMessage): Observable<unknown> {
     return this.http.post(`${environment.apiUrl}/api/contact`, message);
   }
-}
-
-function sortProjects(portfolio: Portfolio): Portfolio {
-  const projects = [...portfolio.projects].sort((a, b) => b.date.localeCompare(a.date));
-  return { ...portfolio, projects };
 }
 
 export const CATEGORY_LABELS: Record<ProjectCategory, string> = {

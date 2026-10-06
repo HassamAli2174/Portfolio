@@ -3,7 +3,6 @@ package com.hassam.portfolio.content;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -32,11 +31,10 @@ public class PortfolioContentService {
         return content;
     }
 
-    /** Projects newest first, optionally restricted to one category. */
+    /** Projects in the order they appear in the JSON, optionally restricted to one category. */
     public List<Project> getProjects(ProjectCategory category) {
         return content.projects().stream()
                 .filter(p -> category == null || p.category() == category)
-                .sorted(Comparator.comparing(Project::date).reversed())
                 .toList();
     }
 

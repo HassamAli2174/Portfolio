@@ -25,14 +25,14 @@ class PortfolioControllerTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.profile.name").value("Hassam Arshad"))
                 .andExpect(jsonPath("$.profile.birthday").value("2002-04-04"))
-                .andExpect(jsonPath("$.projects[0].category").value("web"));
+                .andExpect(jsonPath("$.projects[0].slug").value("trade-finance-settlement"));
     }
 
     @Test
     void filtersProjectsByCategory() throws Exception {
         mockMvc.perform(get("/api/projects").param("category", "Mobile"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.length()").value(3))
+                .andExpect(jsonPath("$.length()").value(4))
                 .andExpect(jsonPath("$[*].category", everyItem(is("mobile"))));
     }
 

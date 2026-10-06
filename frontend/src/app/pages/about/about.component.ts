@@ -3,11 +3,10 @@ import { DatePipe } from '@angular/common';
 
 import { PortfolioService, yearsSince } from '../../core/portfolio.service';
 import { CountUpComponent } from '../../shared/count-up.component';
-import { InViewDirective } from '../../shared/in-view.directive';
 
 @Component({
   selector: 'app-about',
-  imports: [DatePipe, CountUpComponent, InViewDirective],
+  imports: [DatePipe, CountUpComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
