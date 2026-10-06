@@ -37,22 +37,22 @@
     { "name": "React", "level": 50, "description": "Practical front-end development experience with React." }
   ],
   "interests": [
-    { "name": "Deployment", "icon": "fas fa-server", "color": "#ff8c00" },
+    { "name": "Deployment", "icon": "bi bi-hdd-network", "color": "#ff8c00" },
     { "name": "Flutter", "icon": "bx bxl-flutter", "color": "#29b6f6" },
-    { "name": "Bloc", "icon": "fas fa-cubes", "color": "#3fa9f5" },
-    { "name": "GetX", "icon": "fas fa-sync-alt", "color": "#f9c20b" },
-    { "name": "API Integration", "icon": "fas fa-plug", "color": "#3fa9f5" },
-    { "name": "SD Methodologies", "icon": "fas fa-project-diagram", "color": "#a78bfa" },
-    { "name": "CI/CD", "icon": "fas fa-infinity", "color": "#3fa9f5" },
+    { "name": "Bloc", "icon": "bi bi-boxes", "color": "#3fa9f5" },
+    { "name": "GetX", "icon": "bi bi-arrow-repeat", "color": "#f9c20b" },
+    { "name": "API Integration", "icon": "bi bi-plug", "color": "#3fa9f5" },
+    { "name": "SD Methodologies", "icon": "bi bi-diagram-3", "color": "#a78bfa" },
+    { "name": "CI/CD", "icon": "bi bi-infinity", "color": "#3fa9f5" },
     { "name": "React", "icon": "bx bxl-react", "color": "#61dafb" },
     { "name": "JavaScript", "icon": "bx bxl-javascript", "color": "#f0db4f" },
     { "name": "Python", "icon": "bx bxl-python", "color": "#4b8bbe" },
-    { "name": "WebSockets", "icon": "fas fa-network-wired", "color": "#2fbf4d" },
+    { "name": "WebSockets", "icon": "bi bi-ethernet", "color": "#2fbf4d" },
     { "name": "GitHub", "icon": "bx bxl-github", "color": "#e6e6e6" },
     { "name": "Bootstrap", "icon": "bx bxl-bootstrap", "color": "#8a63d2" },
     { "name": "Tailwind CSS", "icon": "bx bxl-tailwind-css", "color": "#38b2ac" },
-    { "name": "WebApp Testing", "icon": "fas fa-vial", "color": "#ff5828" },
-    { "name": "Computer Hardware", "icon": "fas fa-desktop", "color": "#aaaaaa" }
+    { "name": "WebApp Testing", "icon": "bi bi-clipboard-check", "color": "#ff5828" },
+    { "name": "Computer Hardware", "icon": "bi bi-pc-display", "color": "#aaaaaa" }
   ],
   "education": [
     { "title": "Bachelor's in Computer Science", "period": "2021 - 2024", "institution": "University of Karachi, Department of Computer Science (UBIT), Karachi" },

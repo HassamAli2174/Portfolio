@@ -1,0 +1,214 @@
+/* ---------- About me ---------- */
+
+.about-me {
+  display: grid;
+  grid-template-columns: minmax(0, 340px) 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.photo {
+  position: relative;
+  border-radius: var(--radius);
+  padding: 3px;
+  background: var(--accent-gradient);
+  box-shadow: 0 30px 60px -25px rgba(24, 210, 110, 0.45);
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 6 / 7;
+    object-fit: cover;
+    border-radius: calc(var(--radius) - 3px);
+  }
+}
+
+.content {
+  h3 {
+    font: 700 28px var(--font-display);
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .lead {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+}
+
+.facts {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 24px;
+
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  i {
+    color: var(--accent);
+  }
+
+  strong {
+    font-family: var(--font-heading);
+
+    &::after {
+      content: ':';
+    }
+  }
+
+  .status {
+    color: var(--accent);
+    font-weight: 600;
+  }
+}
+
+/* ---------- Counts ---------- */
+
+.counts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.count-box {
+  padding: 30px 26px 24px;
+  text-align: center;
+
+  > i {
+    display: inline-grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #04140b;
+    background: var(--accent-gradient);
+    margin-bottom: 12px;
+  }
+
+  .value {
+    display: block;
+    font: 700 40px var(--font-display);
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+    font: 500 14px var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/* ---------- Skills ---------- */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 40px;
+}
+
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  font: 600 15px var(--font-heading);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  .val {
+    color: var(--accent);
+  }
+}
+
+.bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--accent-gradient);
+  transition: width 1.2s var(--ease);
+}
+
+.skills.in-view .fill {
+  width: var(--level);
+}
+
+.skill small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ---------- Interests ---------- */
+
+.interests {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.interest {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  animation: page-in 0.5s var(--ease) both;
+  animation-delay: calc(var(--i) * 40ms);
+
+  i {
+    font-size: 30px;
+    line-height: 1;
+    width: 32px;
+    text-align: center;
+  }
+
+  h3 {
+    margin: 0;
+    font: 500 16px var(--font-heading);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 992px) {
+  .counts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    max-width: 320px;
+  }
+
+  .facts,
+  .skills {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .counts {
+    grid-template-columns: 1fr;
+  }
+}
