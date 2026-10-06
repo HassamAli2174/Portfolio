@@ -1,0 +1,337 @@
+{
+  "profile": {
+    "name": "Hassam Arshad",
+    "title": "Software Engineer",
+    "tagline": "turning ideas into reality, one line at a time.",
+    "roles": ["Software Engineer", "Flutter Developer", "Full-Stack Developer", "API Craftsman"],
+    "photo": "assets/img/me.jpeg",
+    "birthday": "2002-04-04",
+    "degree": "Bachelor's in Computer Science",
+    "city": "Karachi, Pakistan",
+    "address": "P.E.C.H.S Shahrah-e-Faisal, Karachi",
+    "phone": "+92 334 2702174",
+    "email": "hassamarshad021@gmail.com",
+    "freelance": "Available",
+    "resumeUrl": "assets/Resume.pdf",
+    "about": "As a passionate Software Engineer and Computer Science graduate from the University of Karachi, I pursue excellence by combining strong programming expertise with careful data handling. I'm known for a steady work ethic and tenacity, and I enjoy taking ambitious goals from idea to shipped product.",
+    "summary": "A dynamic developer and Computer Science graduate from the University of Karachi. With strong programming expertise and data handling skills, I thrive in the fast-paced world of IT — combining passion, knowledge and determination to build products that make a difference.",
+    "socials": [
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/hassam-arshad/", "icon": "bi-linkedin" },
+      { "name": "GitHub", "url": "https://github.com/HassamAli2174", "icon": "bi-github" },
+      { "name": "Twitter", "url": "https://twitter.com/HassamAli466259", "icon": "bi-twitter-x" },
+      { "name": "Instagram", "url": "https://www.instagram.com/ali.hassam.9090/", "icon": "bi-instagram" }
+    ]
+  },
+  "stats": [
+    { "icon": "bi-emoji-smile", "value": 7, "label": "Happy Clients" },
+    { "icon": "bi-journal-richtext", "value": 9, "label": "Projects" },
+    { "icon": "bi-headset", "value": 900, "label": "Hours Of Support" },
+    { "icon": "bi-award", "value": 5, "label": "Awards" }
+  ],
+  "skills": [
+    { "name": "HTML & CSS", "level": 95, "description": "Building websites and styling with modern CSS frameworks and pre-processors." },
+    { "name": "Flutter / Dart", "level": 90, "description": "Mobile and desktop app development with Flutter using Dart." },
+    { "name": "Python / Flask", "level": 85, "description": "Server-side API development with Python and Flask." },
+    { "name": "PostgreSQL", "level": 80, "description": "Database management, complex queries and optimization." },
+    { "name": "JavaScript", "level": 70, "description": "Dynamic client-side scripting across many projects." },
+    { "name": "React", "level": 50, "description": "Practical front-end development experience with React." }
+  ],
+  "interests": [
+    { "name": "Deployment", "icon": "fas fa-server", "color": "#ff8c00" },
+    { "name": "Flutter", "icon": "bx bxl-flutter", "color": "#29b6f6" },
+    { "name": "Bloc", "icon": "fas fa-cubes", "color": "#3fa9f5" },
+    { "name": "GetX", "icon": "fas fa-sync-alt", "color": "#f9c20b" },
+    { "name": "API Integration", "icon": "fas fa-plug", "color": "#3fa9f5" },
+    { "name": "SD Methodologies", "icon": "fas fa-project-diagram", "color": "#a78bfa" },
+    { "name": "CI/CD", "icon": "fas fa-infinity", "color": "#3fa9f5" },
+    { "name": "React", "icon": "bx bxl-react", "color": "#61dafb" },
+    { "name": "JavaScript", "icon": "bx bxl-javascript", "color": "#f0db4f" },
+    { "name": "Python", "icon": "bx bxl-python", "color": "#4b8bbe" },
+    { "name": "WebSockets", "icon": "fas fa-network-wired", "color": "#2fbf4d" },
+    { "name": "GitHub", "icon": "bx bxl-github", "color": "#e6e6e6" },
+    { "name": "Bootstrap", "icon": "bx bxl-bootstrap", "color": "#8a63d2" },
+    { "name": "Tailwind CSS", "icon": "bx bxl-tailwind-css", "color": "#38b2ac" },
+    { "name": "WebApp Testing", "icon": "fas fa-vial", "color": "#ff5828" },
+    { "name": "Computer Hardware", "icon": "fas fa-desktop", "color": "#aaaaaa" }
+  ],
+  "education": [
+    { "title": "Bachelor's in Computer Science", "period": "2021 - 2024", "institution": "University of Karachi, Department of Computer Science (UBIT), Karachi" },
+    { "title": "Diploma", "period": "2021 - 2022", "institution": "Aptech University Road, Karachi" },
+    { "title": "Intermediate", "period": "2018 - 2020", "institution": "NCR College of Emerging Technologies" }
+  ],
+  "experience": [
+    {
+      "role": "Associate Software Engineer",
+      "period": "Nov 2023 - Dec 2024",
+      "company": "The Disrupt Labs",
+      "highlights": [
+        "Developed scalable RESTful APIs to support cross-platform applications.",
+        "Leveraged Flutter to build and enhance mobile applications with robust performance.",
+        "Conducted code reviews and unit testing to maintain high-quality standards.",
+        "Collaborated with cross-functional teams to integrate features and resolve technical challenges."
+      ]
+    },
+    {
+      "role": "Software Developer",
+      "period": "May 2023 - Nov 2023",
+      "company": "The Innovative Solutions",
+      "highlights": [
+        "Designed visually appealing UI/UX for web applications.",
+        "Enhanced app functionality through integration of libraries and frameworks.",
+        "Contributed creative ideas in team meetings and brainstorming sessions.",
+        "Conducted detailed software analysis to meet client requirements."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "period": "Dec 2022 - Mar 2023",
+      "company": "Fortify",
+      "highlights": [
+        "Implemented asynchronous programming techniques to handle API calls.",
+        "Used libraries like Axios and the Fetch API for secure and efficient data fetching.",
+        "Successfully integrated third-party APIs into applications."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "e-voting-blockchain",
+      "title": "E-Voting System Using Blockchain",
+      "category": "web",
+      "type": "Blockchain-based Electronic Voting System",
+      "client": "University of Karachi (Department of Computer Science)",
+      "date": "2025-03-09",
+      "url": null,
+      "cover": "assets/img/portfolio/web5.jpg",
+      "images": [
+        "assets/img/portfolio/web5.jpg",
+        "assets/img/portfolio/web6.jpg",
+        "assets/img/portfolio/web7.jpg",
+        "assets/img/portfolio/web8.jpg",
+        "assets/img/portfolio/web9.jpg",
+        "assets/img/portfolio/web10.jpg"
+      ],
+      "summary": "A secure, transparent and efficient electoral platform built on a decentralized ledger.",
+      "description": [
+        "The Blockchain-based Electronic Voting System addresses the persistent challenges of traditional voting by leveraging blockchain technology. The platform ensures a secure, transparent and efficient electoral process, reducing risks such as voter fraud, ballot manipulation and inefficiencies.",
+        "It introduces dual-role functionality: voters can access election details, view candidates and track their participation history, while administrators manage candidate lists, voter records and election results."
+      ],
+      "highlights": [
+        { "title": "Enhanced Security", "text": "Blockchain ensures tamper-proof voting records, reducing the risk of fraud and manipulation." },
+        { "title": "Transparency & Trust", "text": "Every vote is recorded on a public ledger, providing verifiable results that build voter confidence." },
+        { "title": "Efficiency & Accessibility", "text": "Digital voting speeds up counting, minimizes errors and is inclusive for voters with disabilities." },
+        { "title": "Immutable Record Keeping", "text": "Transactions stored on the blockchain cannot be altered, keeping electoral data permanent and accurate." }
+      ],
+      "tech": ["Blockchain", "Smart Contracts", "Web3"]
+    },
+    {
+      "slug": "shan-foods-safety-dashboard",
+      "title": "Shan Foods Industrial Safety AI Dashboard",
+      "category": "desktop",
+      "type": "Desktop App",
+      "client": "Shan Foods",
+      "date": "2024-08-01",
+      "url": "https://github.com/HassamAli2174/Shah_foods",
+      "cover": "assets/img/portfolio/desktop2.jpg",
+      "images": [
+        "assets/img/portfolio/desktop2.jpg",
+        "assets/img/portfolio/dpd3.jpg",
+        "assets/img/portfolio/dpd4.jpg",
+        "assets/img/portfolio/dpd5.jpg",
+        "assets/img/portfolio/dpd6.jpg",
+        "assets/img/portfolio/dpd7.jpg",
+        "assets/img/portfolio/dpd8.jpg",
+        "assets/img/portfolio/dpd9.jpg"
+      ],
+      "summary": "Real-time monitoring of safety protocols in industrial environments, built with Flutter for desktop.",
+      "description": [
+        "The Shan Foods Industrial Safety AI Dashboard is a Flutter-based desktop application designed to monitor and manage safety protocols in industrial environments. It provides real-time data visualization and alerting for safety metrics including gate blockages, compliance levels and emergency incidents."
+      ],
+      "highlights": [
+        { "title": "Real-time Dashboards", "text": "Live data for gate blockages, total compliance and emergency alerts." },
+        { "title": "Weekly & Monthly Views", "text": "Detailed insights with weekly and monthly breakdowns." },
+        { "title": "Live Alerts", "text": "Immediate notification of critical situations needing attention." },
+        { "title": "User Management", "text": "Login and signup flows for different user roles." },
+        { "title": "Responsive Design", "text": "Layouts tailored to different desktop screen sizes." }
+      ],
+      "tech": ["Flutter", "Dart", "Desktop"]
+    },
+    {
+      "slug": "dialogflow-chatbot",
+      "title": "Custom Chatbot with Google Dialogflow",
+      "category": "web",
+      "type": "Chatbot",
+      "client": "Self",
+      "date": "2024-07-01",
+      "url": "https://lnkd.in/d24sM-x9",
+      "cover": "assets/img/portfolio/web2.jpg",
+      "images": ["assets/img/portfolio/wpd2.jpg", "assets/img/portfolio/web2.jpg"],
+      "summary": "A conversational AI assistant built on Dialogflow, hosted on Google Cloud Platform with a Flutter front end.",
+      "description": [
+        "I built a custom chatbot using Google Dialogflow and hosted it on Google Cloud Platform. This project blends my passion for technology with practical applications of artificial intelligence and natural language processing.",
+        "Google Dialogflow powers the conversational AI, Google Cloud Platform hosts the backend API, and Flutter delivers the sleek front end."
+      ],
+      "highlights": [
+        { "title": "Natural Language Understanding", "text": "The bot understands and responds to user queries in real time." },
+        { "title": "Integration with Flutter", "text": "Seamlessly displays bot responses and enhances user interaction." },
+        { "title": "Scalable Architecture", "text": "Built to handle future expansion and increased user interactions." },
+        { "title": "Why I'm Excited", "text": "This project pushed me to dive deep into AI and NLP without prior experience, learning and innovating in real time." }
+      ],
+      "tech": ["Dialogflow", "Google Cloud", "Flutter"]
+    },
+    {
+      "slug": "texatube",
+      "title": "TexaTube",
+      "category": "desktop",
+      "type": "Desktop App",
+      "client": "Self",
+      "date": "2024-06-15",
+      "url": "https://github.com/HassamAli2174/Flutter-.txt-converter",
+      "cover": "assets/img/portfolio/desktop1.jpg",
+      "images": ["assets/img/portfolio/dpd1.jpg", "assets/img/portfolio/dpd2.jpg"],
+      "summary": "A Flutter desktop app that simplifies managing YouTube video metadata for creators and SEO specialists.",
+      "description": [
+        "After mastering Flutter for web applications and building a large-scale project, I challenged myself further by diving into desktop development with Flutter. The result is TexaTube — an app that simplifies the management of YouTube video metadata for content creators and SEO specialists.",
+        "Creating TexaTube was not just about learning a new build target; it was about pushing the boundaries of what I thought possible."
+      ],
+      "highlights": [
+        { "title": "Proper Folder Structure", "text": "Organized the code for better scalability and maintenance." },
+        { "title": "App Window Customization", "text": "Set up and customized the application window to enhance the user experience." },
+        { "title": "Data Management", "text": "Reading and writing data for seamless metadata management." },
+        { "title": "Custom Widgets and Services", "text": "Developed unique widgets and services tailored to user needs." },
+        { "title": "Executable Creation", "text": "Packaged the Flutter project as a standalone EXE installable on any computer." }
+      ],
+      "tech": ["Flutter", "Dart", "Windows"]
+    },
+    {
+      "slug": "xwallet",
+      "title": "xWallet",
+      "category": "mobile",
+      "type": "Mobile App",
+      "client": "Self",
+      "date": "2024-03-28",
+      "url": "https://github.com/HassamAli2174/xwallet",
+      "cover": "assets/img/portfolio/mob4.jpg",
+      "images": ["assets/img/portfolio/mob4.jpg"],
+      "summary": "A digital wallet for managing and transacting cryptocurrencies like USDT and BNB.",
+      "description": [
+        "xWallet is a versatile digital wallet app for managing and transacting cryptocurrencies like USDT and BNB. The interface offers quick payment amount selection, prominently displayed balances and a list of recent transactions such as movie tickets and electronics purchases — a practical tool for everyday financial management and crypto trading."
+      ],
+      "highlights": [],
+      "tech": ["Flutter", "Crypto"]
+    },
+    {
+      "slug": "chat-app",
+      "title": "Real-time Chat App",
+      "category": "mobile",
+      "type": "Messaging App",
+      "client": "Self",
+      "date": "2024-03-20",
+      "url": "https://github.com/HassamAli2174/Chatapp_UI",
+      "cover": "assets/img/portfolio/mob3.jpg",
+      "images": ["assets/img/portfolio/mob3.jpg"],
+      "summary": "A messaging app for real-time communication over socket connections.",
+      "description": [
+        "A messaging app designed to facilitate real-time communication using socket connections.",
+        "The UI features a sleek, modern design focused on usability, showing recent threads with contact avatars, names and a snippet or timestamp of the last message. A search bar at the top lets users quickly find contacts or conversations."
+      ],
+      "highlights": [],
+      "tech": ["Flutter", "WebSockets"]
+    },
+    {
+      "slug": "ytml-mobile",
+      "title": "Industrial AI Dashboard (YTML) — Mobile",
+      "category": "mobile",
+      "type": "Dashboard",
+      "client": "Yunus Textile",
+      "date": "2024-03-10",
+      "url": "https://github.com/HassamAli2174/ytml",
+      "cover": "assets/img/portfolio/mob1.jpg",
+      "images": ["assets/img/portfolio/mob1.jpg", "assets/img/portfolio/mob2.jpg"],
+      "summary": "Compliance monitoring for an industrial setting, on the go.",
+      "description": [
+        "An Industrial AI Dashboard designed for monitoring and compliance in an industrial setting. Compliance metrics are shown with pie charts across three categories: Overall, Admin and House Keeping compliance.",
+        "Below these, the dashboard lists House Keeping and Admin alerts — pallets, cardboard, trolleys, garbage, emergencies, wrong parking, crowd presence and intruders — each with incident counts and percentages. It is part of a larger system by The Disrupt Labs."
+      ],
+      "highlights": [
+        { "title": "Overall Compliance", "text": "Compliance vs. non-compliance at a glance." },
+        { "title": "Admin Compliance", "text": "Admin alerts with incident counts and percentages." },
+        { "title": "House Keeping Compliance", "text": "House keeping alerts tracked per category." }
+      ],
+      "tech": ["Flutter", "Charts", "AI"]
+    },
+    {
+      "slug": "ytml-web",
+      "title": "Industrial AI Dashboard (YTML) — Web",
+      "category": "web",
+      "type": "Dashboard",
+      "client": "Yunus Textile",
+      "date": "2024-03-10",
+      "url": "https://github.com/HassamAli2174/ytml",
+      "cover": "assets/img/portfolio/web3.jpg",
+      "images": ["assets/img/portfolio/web3.jpg"],
+      "summary": "The web edition of the YTML industrial compliance dashboard.",
+      "description": [
+        "An Industrial AI Dashboard designed for monitoring and compliance in an industrial setting. Compliance metrics are shown with pie charts across three categories: Overall, Admin and House Keeping compliance.",
+        "Below these, the dashboard lists House Keeping and Admin alerts — pallets, cardboard, trolleys, garbage, emergencies, wrong parking, crowd presence and intruders — each with incident counts and percentages. It is part of a larger system by The Disrupt Labs."
+      ],
+      "highlights": [
+        { "title": "Overall Compliance", "text": "Compliance vs. non-compliance at a glance." },
+        { "title": "Admin Compliance", "text": "Admin alerts with incident counts and percentages." },
+        { "title": "House Keeping Compliance", "text": "House keeping alerts tracked per category." }
+      ],
+      "tech": ["Flutter Web", "Charts", "AI"]
+    },
+    {
+      "slug": "miketoken-dex",
+      "title": "MikeToken.IO DEX Platform",
+      "category": "web",
+      "type": "DEX Platform",
+      "client": "Steve",
+      "date": "2023-04-10",
+      "url": "https://github.com/HassamAli2174/DEX-Platform",
+      "cover": "assets/img/portfolio/web4.jpg",
+      "images": [
+        "assets/img/portfolio/web4.jpg",
+        "assets/img/portfolio/wpd3.jpg",
+        "assets/img/portfolio/wpd4.jpg",
+        "assets/img/portfolio/wpd5.jpg",
+        "assets/img/portfolio/wpd6.jpg",
+        "assets/img/portfolio/wpd7.jpg"
+      ],
+      "summary": "A decentralized exchange that brings trading, staking and asset management together.",
+      "description": [
+        "MikeToken.IO is a decentralized exchange (DEX) platform that integrates advanced financial tools with blockchain technology. Designed for both new and experienced users, it offers an intuitive interface that simplifies trading, staking and managing digital assets.",
+        "The goal is to drive innovation in DeFi with a platform that simplifies complex financial operations and introduces users to the possibilities of blockchain technology."
+      ],
+      "highlights": [
+        { "title": "Connect Wallet", "text": "Connect MetaMask, Coinbase Wallet or Binance Wallet and start trading immediately." },
+        { "title": "High Security and Trust", "text": "End-to-end encryption and decentralized storage keep user assets safe." },
+        { "title": "Tokenomics and Rewards", "text": "Competitive rates, low fees and reward programs that incentivize participation." }
+      ],
+      "tech": ["React", "Web3", "DeFi"]
+    },
+    {
+      "slug": "real-estate",
+      "title": "Real Estate Finder",
+      "category": "web",
+      "type": "Web Design",
+      "client": "ASU Company",
+      "date": "2023-03-01",
+      "url": "https://real-estate-us.netlify.app/",
+      "cover": "assets/img/portfolio/web1.jpg",
+      "images": [
+        "assets/img/portfolio/portfolio-details-1.jpg",
+        "assets/img/portfolio/portfolio-details-3.jpg",
+        "assets/img/portfolio/portfolio-details-2.jpg"
+      ],
+      "summary": "Search properties by location, price, type and bedrooms — built with ReactJS.",
+      "description": [
+        "Users can search for properties by location and filter results by price, type (house or apartment), number of bedrooms and place. A clean UI makes finding your dream home easier than ever.",
+        "The project covers ReactJS fundamentals — functional components, hooks such as useState, useEffect and useContext, React Icons and React Router — and works with a large property dataset. It is fully responsive across devices."
+      ],
+      "highlights": [],
+      "tech": ["React", "React Router", "Responsive"]
+    }
+  ]
+}
