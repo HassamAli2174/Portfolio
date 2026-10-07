@@ -1,0 +1,60 @@
+@if (loaded()) {
+  <section class="page container">
+    <div class="section-title">
+      <h2>Portfolio</h2>
+      <p>My works</p>
+    </div>
+
+    <nav class="filters" aria-label="Filter projects">
+      @for (filter of filters(); track filter.label) {
+        <a
+          routerLink="/portfolio"
+          [queryParams]="{ category: filter.id }"
+          [class.active]="activeCategory() === filter.id"
+          [attr.aria-current]="activeCategory() === filter.id ? 'page' : null"
+        >
+          {{ filter.label }} <span class="count">{{ filter.count }}</span>
+        </a>
+      }
+    </nav>
+
+    <div class="grid projects">
+      @for (project of visible(); track project.slug; let i = $index) {
+        <article class="project card card-hover" [style.--i]="i">
+          <div class="media">
+            <app-project-cover [project]="project" />
+            <div class="overlay">
+              @if (project.cover; as cover) {
+                <button type="button" aria-label="Enlarge image" title="Enlarge image" (click)="zoom(cover)">
+                  <i class="bi bi-zoom-in"></i>
+                </button>
+              }
+              <a [routerLink]="['/portfolio', project.slug]" aria-label="Project details" title="Project details">
+                <i class="bi bi-arrow-up-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="body">
+            <span class="category"><i class="bi" [class]="icons[project.category]"></i>{{ labels[project.category] }}</span>
+            <h3>
+              <a [routerLink]="['/portfolio', project.slug]">{{ project.title }}</a>
+            </h3>
+            <p>{{ project.summary }}</p>
+            <ul class="tech">
+              @for (tech of project.tech; track tech) {
+                <li class="chip">{{ tech }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      } @empty {
+        <p class="empty">No projects in this category yet.</p>
+      }
+    </div>
+  </section>
+
+  <app-lightbox [images]="covers()" label="Project preview" [(index)]="lightboxIndex" />
+} @else {
+  <div class="loading-state"><div class="spinner" aria-label="Loading"></div></div>
+}

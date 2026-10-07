@@ -1,0 +1,755 @@
+{
+  "profile": {
+    "name": "Hassam Arshad",
+    "title": "Technical Consultant — Banking & Trade Finance Systems",
+    "tagline": "building reliable banking, trade finance and cross-platform software.",
+    "roles": [
+      "Technical Consultant",
+      "Java & Spring Boot Developer",
+      "Angular Developer",
+      "Flutter Developer"
+    ],
+    "photo": "assets/img/me.jpeg",
+    "birthday": "2002-04-04",
+    "degree": "Bachelor's in Computer Science",
+    "city": "Karachi, Pakistan",
+    "address": "P.E.C.H.S Shahrah-e-Faisal, Karachi",
+    "phone": "+92 334 2702174",
+    "email": "hassamarshad021@gmail.com",
+    "freelance": "Available",
+    "resumeUrl": "assets/Resume.pdf",
+    "about": "I am a Technical Consultant at Infotech, implementing, integrating and customizing Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI) for different banks. Alongside consulting, I contribute to an in-house core banking product built with Java, Spring Boot and Angular on a microservices architecture, including an event-sourced Import LC backend. Before banking, I spent two years shipping cross-platform Flutter apps for clients in Dubai and the USA.",
+    "summary": "Technical Consultant specialising in banking and trade finance systems (Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI)). I combine hands-on core banking implementation with full-stack engineering in Java, Spring Boot and Angular, backed by a Computer Science degree from the University of Karachi (UBIT) and a background in cross-platform Flutter development.",
+    "socials": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/hassam-arshad/",
+        "icon": "bi-linkedin"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/HassamAli2174",
+        "icon": "bi-github"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/HassamAli466259",
+        "icon": "bi-twitter-x"
+      },
+      {
+        "name": "Instagram",
+        "url": "https://www.instagram.com/ali.hassam.9090/",
+        "icon": "bi-instagram"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "icon": "bi-emoji-smile",
+      "value": 7,
+      "label": "Happy Clients"
+    },
+    {
+      "icon": "bi-journal-richtext",
+      "value": 12,
+      "label": "Projects"
+    },
+    {
+      "icon": "bi-headset",
+      "value": 900,
+      "label": "Hours Of Support"
+    },
+    {
+      "icon": "bi-award",
+      "value": 5,
+      "label": "Awards"
+    }
+  ],
+  "skillGroups": [
+    {
+      "name": "Programming Languages",
+      "icon": "bi-code-slash",
+      "items": [
+        "Java",
+        "JavaScript",
+        "TypeScript",
+        "Dart",
+        "Python"
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "icon": "bi-layers",
+      "items": [
+        "Spring Boot",
+        "Angular",
+        "Flutter"
+      ]
+    },
+    {
+      "name": "Banking Platforms",
+      "icon": "bi-bank",
+      "items": [
+        "Oracle",
+        "Fusion Trade Innovation (FTI)",
+        "Fusion Corporate Channels (FCC)",
+        "IBM WebSphere",
+        "WebLogic",
+        "IBM MQ"
+      ]
+    },
+    {
+      "name": "Tools & Databases",
+      "icon": "bi-database",
+      "items": [
+        "Oracle DB",
+        "PostgreSQL",
+        "SQL",
+        "MongoDB",
+        "Eureka",
+        "Git",
+        "Postman"
+      ]
+    },
+    {
+      "name": "Development Areas",
+      "icon": "bi-diagram-3",
+      "items": [
+        "Trade Finance (Import LC, Treasury, Charges)",
+        "Event Sourcing & Microservices",
+        "NGINX",
+        "Docker",
+        "Kubernetes",
+        "Wildfly",
+        "Core Banking Connectivity",
+        "RESTful APIs",
+        "Cross-Platform Apps",
+        "UI/UX",
+        "Firebase Integration"
+      ]
+    }
+  ],
+  "highlights": [
+    "Hands-on FCC/FTI implementation across bank branches.",
+    "Trained in FCC setup, installation, and Oracle DB administration.",
+    "Built an event-sourced trade backend in Spring Boot and Angular.",
+    "Proficient in Git, GitHub Actions, and collaborative Agile environments."
+  ],
+  "interests": [
+    {
+      "name": "Banking Systems",
+      "icon": "bi bi-bank",
+      "color": "#18d26e"
+    },
+    {
+      "name": "SQL",
+      "icon": "bi bi-database",
+      "color": "#18d26e"
+    },
+    {
+      "name": "Java",
+      "icon": "bx bxl-java",
+      "color": "#f89820"
+    },
+    {
+      "name": "Spring Boot",
+      "icon": "bx bxl-spring-boot",
+      "color": "#6db33f"
+    },
+    {
+      "name": "Angular",
+      "icon": "bx bxl-angular",
+      "color": "#dd0031"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "bx bxl-typescript",
+      "color": "#3178c6"
+    },
+    {
+      "name": "Microservices",
+      "icon": "bi bi-diagram-3",
+      "color": "#a78bfa"
+    },
+    {
+      "name": "Event Sourcing",
+      "icon": "bi bi-clock-history",
+      "color": "#f9c20b"
+    },
+    {
+      "name": "Oracle DB",
+      "icon": "bi bi-database",
+      "color": "#f80000"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "bx bxl-postgresql",
+      "color": "#4f8fcf"
+    },
+    {
+      "name": "Flutter",
+      "icon": "bx bxl-flutter",
+      "color": "#29b6f6"
+    },
+    {
+      "name": "Firebase",
+      "icon": "bx bxl-firebase",
+      "color": "#ffca28"
+    },
+    {
+      "name": "API Integration",
+      "icon": "bi bi-plug",
+      "color": "#3fa9f5"
+    },
+    {
+      "name": "GitHub Actions",
+      "icon": "bx bxl-git",
+      "color": "#f05032"
+    },
+    {
+      "name": "Python",
+      "icon": "bx bxl-python",
+      "color": "#4b8bbe"
+    },
+    {
+      "name": "Agile",
+      "icon": "bi bi-arrow-repeat",
+      "color": "#38b2ac"
+    },
+    {
+      "name": "Docker",
+      "icon": "bx bxl-docker",
+      "color": "#29b6f6"
+    },
+    {
+      "name": "Kubernetes",
+      "icon": "bx bxl-kubernetes",
+      "color": "#29b6f6"
+    },
+    {
+      "name": "Wildfly",
+      "icon": "bx bxl-wildfly",
+      "color": "#29b6f6"
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor's in Computer Science",
+      "period": "2021 - 2024",
+      "institution": "University of Karachi (UBIT)"
+    },
+    {
+      "title": "Diploma in IT",
+      "period": "2022",
+      "institution": "Aptech"
+    },
+    {
+      "title": "Intermediate (Pre-Engineering)",
+      "period": "2018 - 2020",
+      "institution": "NCR-CET College"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Technical Consultant — Banking Solutions",
+      "period": "2025 - Present",
+      "company": "Infotech Pvt Ltd",
+      "location": "Karachi",
+      "highlights": [
+        "Implement, integrate, migrate, and customize Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI) across different banks.",
+        "Trained in FCC and FTI setup, installation, customization, and Oracle database administration; IBM MQ; document customization requirements for FCC 6.2.4.2 and FTI 2.10.5.0.",
+        "Install and customize FCC 6.2.4.2, including Angular branding, localization, interfaces, and portlets, with core banking application connectivity.",
+        "Contribute to an in-house core banking product built with Java, Spring Boot, and Angular, structured as microservices with a Eureka discovery server.",
+        "Design and maintain an event-sourced Import LC backend, including the full amendment lifecycle (draft/submit/approve/reject) and field-level LC diffing."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "period": "Nov 2023 - Dec 2024",
+      "company": "The Disrupt Labs",
+      "location": "Dubai",
+      "highlights": [
+        "Developed and maintained modular Flutter codebases for scalable cross-platform mobile applications.",
+        "Integrated RESTful APIs, Firebase Authentication, and real-time database features.",
+        "Applied secure coding practices and implemented offline-first architecture."
+      ]
+    },
+    {
+      "role": "Associate Software Engineer",
+      "period": "May 2023 - Nov 2023",
+      "company": "The Innovative Solutions",
+      "location": "USA",
+      "highlights": [
+        "Designed pixel-perfect UI/UX in Flutter based on Figma wireframes and Material Design guidelines.",
+        "Integrated REST APIs and managed asynchronous data flows with Streams/Futures."
+      ]
+    },
+    {
+      "role": "Software Engineering Intern",
+      "period": "Dec 2022 - Mar 2023",
+      "company": "Fortify",
+      "location": null,
+      "highlights": [
+        "Implemented asynchronous programming techniques to handle API calls.",
+        "Used libraries like Axios and the Fetch API for secure and efficient data fetching.",
+        "Successfully integrated third-party APIs into applications."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "trade-finance-settlement",
+      "title": "Trade Finance Settlement System",
+      "category": "web",
+      "type": "Banking / Trade Finance",
+      "client": "Infotech Pvt Ltd (in-house)",
+      "date": null,
+      "url": null,
+      "cover": null,
+      "images": [],
+      "summary": "An event-sourced Import LC backend inside a Spring Boot microservices platform.",
+      "description": [
+        "A trade finance backend with an event-sourced Import LC module, built as part of a Spring Boot microservices architecture with a Eureka discovery server and an Angular front end.",
+        "Every change to a Letter of Credit is stored as an event, so the full history of an LC can be replayed and any two versions compared field by field."
+      ],
+      "highlights": [
+        {
+          "title": "Amendment Lifecycle",
+          "text": "Full draft, submit, approve and reject workflow for LC amendments."
+        },
+        {
+          "title": "Field-level Diffing",
+          "text": "Shows exactly which fields changed between LC versions."
+        },
+        {
+          "title": "Microservices",
+          "text": "Spring Boot services registered with a Eureka discovery server."
+        }
+      ],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Angular",
+        "Event Sourcing",
+        "Eureka"
+      ]
+    },
+    {
+      "slug": "inspection-system",
+      "title": "Inspection System",
+      "category": "mobile",
+      "type": "Mobile & Web App",
+      "client": null,
+      "date": null,
+      "url": null,
+      "cover": null,
+      "images": [],
+      "summary": "An offline-first inspection app with PDF parsing, data visualization and background sync.",
+      "description": [
+        "An offline-first inspection system for mobile and web, built with Flutter. Inspectors keep working without connectivity, and data syncs in the background once a connection is available."
+      ],
+      "highlights": [
+        {
+          "title": "Offline-first",
+          "text": "Local storage with background syncing using Flutter's async capabilities."
+        },
+        {
+          "title": "PDF Parsing",
+          "text": "Reads inspection documents directly in the app."
+        },
+        {
+          "title": "Data Visualization",
+          "text": "Charts that summarise inspection results at a glance."
+        }
+      ],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "Offline-first",
+        "PDF"
+      ]
+    },
+    {
+      "slug": "shan-foods-safety-dashboard",
+      "title": "Shan Foods Industrial Safety AI App",
+      "category": "desktop",
+      "type": "Mobile, Desktop & Web App",
+      "client": "Shan Foods",
+      "date": "2024-08-01",
+      "url": "https://github.com/HassamAli2174/Shah_foods",
+      "cover": "assets/img/portfolio/desktop2.jpg",
+      "images": [
+        "assets/img/portfolio/desktop2.jpg",
+        "assets/img/portfolio/dpd3.jpg",
+        "assets/img/portfolio/dpd4.jpg",
+        "assets/img/portfolio/dpd5.jpg",
+        "assets/img/portfolio/dpd6.jpg",
+        "assets/img/portfolio/dpd7.jpg",
+        "assets/img/portfolio/dpd8.jpg",
+        "assets/img/portfolio/dpd9.jpg"
+      ],
+      "summary": "AI-based object detection for industrial safety, running on mobile, desktop and web with Flutter.",
+      "description": [
+        "The Shan Foods Industrial Safety AI Dashboard is a Flutter-based desktop application designed to monitor and manage safety protocols in industrial environments. It provides real-time data visualization and alerting for safety metrics including gate blockages, compliance levels and emergency incidents."
+      ],
+      "highlights": [
+        {
+          "title": "AI Object Detection",
+          "text": "AI-based object detection in Flutter, with efficient state management using GetX."
+        },
+        {
+          "title": "Cross-platform Performance",
+          "text": "Smooth performance and responsive UX across mobile, desktop and web."
+        },
+        {
+          "title": "Real-time Dashboards",
+          "text": "Live data for gate blockages, total compliance and emergency alerts."
+        },
+        {
+          "title": "Weekly & Monthly Views",
+          "text": "Detailed insights with weekly and monthly breakdowns."
+        },
+        {
+          "title": "Live Alerts",
+          "text": "Immediate notification of critical situations needing attention."
+        },
+        {
+          "title": "User Management",
+          "text": "Login and signup flows for different user roles."
+        },
+        {
+          "title": "Responsive Design",
+          "text": "Layouts tailored to different desktop screen sizes."
+        }
+      ],
+      "tech": [
+        "Flutter",
+        "GetX",
+        "AI",
+        "Desktop"
+      ]
+    },
+    {
+      "slug": "e-voting-blockchain",
+      "title": "E-Voting System Using Blockchain",
+      "category": "web",
+      "type": "Blockchain-based Electronic Voting System",
+      "client": "University of Karachi (Department of Computer Science)",
+      "date": "2025-03-09",
+      "url": null,
+      "cover": "assets/img/portfolio/web5.jpg",
+      "images": [
+        "assets/img/portfolio/web5.jpg",
+        "assets/img/portfolio/web6.jpg",
+        "assets/img/portfolio/web7.jpg",
+        "assets/img/portfolio/web8.jpg",
+        "assets/img/portfolio/web9.jpg",
+        "assets/img/portfolio/web10.jpg"
+      ],
+      "summary": "A secure, transparent and efficient electoral platform built on a decentralized ledger.",
+      "description": [
+        "The Blockchain-based Electronic Voting System addresses the persistent challenges of traditional voting by leveraging blockchain technology. The platform ensures a secure, transparent and efficient electoral process, reducing risks such as voter fraud, ballot manipulation and inefficiencies.",
+        "It introduces dual-role functionality: voters can access election details, view candidates and track their participation history, while administrators manage candidate lists, voter records and election results."
+      ],
+      "highlights": [
+        {
+          "title": "Enhanced Security",
+          "text": "Blockchain ensures tamper-proof voting records, reducing the risk of fraud and manipulation."
+        },
+        {
+          "title": "Transparency & Trust",
+          "text": "Every vote is recorded on a public ledger, providing verifiable results that build voter confidence."
+        },
+        {
+          "title": "Efficiency & Accessibility",
+          "text": "Digital voting speeds up counting, minimizes errors and is inclusive for voters with disabilities."
+        },
+        {
+          "title": "Immutable Record Keeping",
+          "text": "Transactions stored on the blockchain cannot be altered, keeping electoral data permanent and accurate."
+        }
+      ],
+      "tech": [
+        "Blockchain",
+        "Smart Contracts",
+        "Web3"
+      ]
+    },
+    {
+      "slug": "dialogflow-chatbot",
+      "title": "Custom Chatbot with Google Dialogflow",
+      "category": "web",
+      "type": "Chatbot",
+      "client": "Self",
+      "date": "2024-07-01",
+      "url": "https://lnkd.in/d24sM-x9",
+      "cover": "assets/img/portfolio/web2.jpg",
+      "images": [
+        "assets/img/portfolio/wpd2.jpg",
+        "assets/img/portfolio/web2.jpg"
+      ],
+      "summary": "A conversational AI assistant built on Dialogflow, hosted on Google Cloud Platform with a Flutter front end.",
+      "description": [
+        "I built a custom chatbot using Google Dialogflow and hosted it on Google Cloud Platform. This project blends my passion for technology with practical applications of artificial intelligence and natural language processing.",
+        "Google Dialogflow powers the conversational AI, Google Cloud Platform hosts the backend API, and Flutter delivers the sleek front end."
+      ],
+      "highlights": [
+        {
+          "title": "Natural Language Understanding",
+          "text": "The bot understands and responds to user queries in real time."
+        },
+        {
+          "title": "Integration with Flutter",
+          "text": "Seamlessly displays bot responses and enhances user interaction."
+        },
+        {
+          "title": "Scalable Architecture",
+          "text": "Built to handle future expansion and increased user interactions."
+        },
+        {
+          "title": "Why I'm Excited",
+          "text": "This project pushed me to dive deep into AI and NLP without prior experience, learning and innovating in real time."
+        }
+      ],
+      "tech": [
+        "Dialogflow",
+        "Google Cloud",
+        "Flutter"
+      ]
+    },
+    {
+      "slug": "texatube",
+      "title": "TexaTube",
+      "category": "desktop",
+      "type": "Desktop App",
+      "client": "Self",
+      "date": "2024-06-15",
+      "url": "https://github.com/HassamAli2174/Flutter-.txt-converter",
+      "cover": "assets/img/portfolio/desktop1.jpg",
+      "images": [
+        "assets/img/portfolio/dpd1.jpg",
+        "assets/img/portfolio/dpd2.jpg"
+      ],
+      "summary": "A Flutter desktop app that simplifies managing YouTube video metadata for creators and SEO specialists.",
+      "description": [
+        "After mastering Flutter for web applications and building a large-scale project, I challenged myself further by diving into desktop development with Flutter. The result is TexaTube — an app that simplifies the management of YouTube video metadata for content creators and SEO specialists.",
+        "Creating TexaTube was not just about learning a new build target; it was about pushing the boundaries of what I thought possible."
+      ],
+      "highlights": [
+        {
+          "title": "Proper Folder Structure",
+          "text": "Organized the code for better scalability and maintenance."
+        },
+        {
+          "title": "App Window Customization",
+          "text": "Set up and customized the application window to enhance the user experience."
+        },
+        {
+          "title": "Data Management",
+          "text": "Reading and writing data for seamless metadata management."
+        },
+        {
+          "title": "Custom Widgets and Services",
+          "text": "Developed unique widgets and services tailored to user needs."
+        },
+        {
+          "title": "Executable Creation",
+          "text": "Packaged the Flutter project as a standalone EXE installable on any computer."
+        }
+      ],
+      "tech": [
+        "Flutter",
+        "Dart",
+        "Windows"
+      ]
+    },
+    {
+      "slug": "xwallet",
+      "title": "xWallet",
+      "category": "mobile",
+      "type": "Mobile App",
+      "client": "Self",
+      "date": "2024-03-28",
+      "url": "https://github.com/HassamAli2174/xwallet",
+      "cover": "assets/img/portfolio/mob4.jpg",
+      "images": [
+        "assets/img/portfolio/mob4.jpg"
+      ],
+      "summary": "A digital wallet for managing and transacting cryptocurrencies like USDT and BNB.",
+      "description": [
+        "xWallet is a versatile digital wallet app for managing and transacting cryptocurrencies like USDT and BNB. The interface offers quick payment amount selection, prominently displayed balances and a list of recent transactions such as movie tickets and electronics purchases — a practical tool for everyday financial management and crypto trading."
+      ],
+      "highlights": [],
+      "tech": [
+        "Flutter",
+        "Crypto"
+      ]
+    },
+    {
+      "slug": "chat-app",
+      "title": "Real-time Chat App",
+      "category": "mobile",
+      "type": "Messaging App",
+      "client": "Self",
+      "date": "2024-03-20",
+      "url": "https://github.com/HassamAli2174/Chatapp_UI",
+      "cover": "assets/img/portfolio/mob3.jpg",
+      "images": [
+        "assets/img/portfolio/mob3.jpg"
+      ],
+      "summary": "A messaging app for real-time communication over socket connections.",
+      "description": [
+        "A messaging app designed to facilitate real-time communication using socket connections.",
+        "The UI features a sleek, modern design focused on usability, showing recent threads with contact avatars, names and a snippet or timestamp of the last message. A search bar at the top lets users quickly find contacts or conversations."
+      ],
+      "highlights": [],
+      "tech": [
+        "Flutter",
+        "WebSockets"
+      ]
+    },
+    {
+      "slug": "ytml-mobile",
+      "title": "Industrial AI Dashboard (YTML) — Mobile",
+      "category": "mobile",
+      "type": "Dashboard",
+      "client": "Yunus Textile",
+      "date": "2024-03-10",
+      "url": "https://github.com/HassamAli2174/ytml",
+      "cover": "assets/img/portfolio/mob1.jpg",
+      "images": [
+        "assets/img/portfolio/mob1.jpg",
+        "assets/img/portfolio/mob2.jpg"
+      ],
+      "summary": "Compliance monitoring for an industrial setting, on the go.",
+      "description": [
+        "An Industrial AI Dashboard designed for monitoring and compliance in an industrial setting. Compliance metrics are shown with pie charts across three categories: Overall, Admin and House Keeping compliance.",
+        "Below these, the dashboard lists House Keeping and Admin alerts — pallets, cardboard, trolleys, garbage, emergencies, wrong parking, crowd presence and intruders — each with incident counts and percentages. It is part of a larger system by The Disrupt Labs."
+      ],
+      "highlights": [
+        {
+          "title": "Overall Compliance",
+          "text": "Compliance vs. non-compliance at a glance."
+        },
+        {
+          "title": "Admin Compliance",
+          "text": "Admin alerts with incident counts and percentages."
+        },
+        {
+          "title": "House Keeping Compliance",
+          "text": "House keeping alerts tracked per category."
+        }
+      ],
+      "tech": [
+        "Flutter",
+        "Charts",
+        "AI"
+      ]
+    },
+    {
+      "slug": "ytml-web",
+      "title": "Industrial AI Dashboard (YTML) — Web",
+      "category": "web",
+      "type": "Dashboard",
+      "client": "Yunus Textile",
+      "date": "2024-03-10",
+      "url": "https://github.com/HassamAli2174/ytml",
+      "cover": "assets/img/portfolio/web3.jpg",
+      "images": [
+        "assets/img/portfolio/web3.jpg"
+      ],
+      "summary": "The web edition of the YTML industrial compliance dashboard.",
+      "description": [
+        "An Industrial AI Dashboard designed for monitoring and compliance in an industrial setting. Compliance metrics are shown with pie charts across three categories: Overall, Admin and House Keeping compliance.",
+        "Below these, the dashboard lists House Keeping and Admin alerts — pallets, cardboard, trolleys, garbage, emergencies, wrong parking, crowd presence and intruders — each with incident counts and percentages. It is part of a larger system by The Disrupt Labs."
+      ],
+      "highlights": [
+        {
+          "title": "Overall Compliance",
+          "text": "Compliance vs. non-compliance at a glance."
+        },
+        {
+          "title": "Admin Compliance",
+          "text": "Admin alerts with incident counts and percentages."
+        },
+        {
+          "title": "House Keeping Compliance",
+          "text": "House keeping alerts tracked per category."
+        }
+      ],
+      "tech": [
+        "Flutter Web",
+        "Charts",
+        "AI"
+      ]
+    },
+    {
+      "slug": "miketoken-dex",
+      "title": "MikeToken.IO DEX Platform",
+      "category": "web",
+      "type": "DEX Platform",
+      "client": "Steve",
+      "date": "2023-04-10",
+      "url": "https://github.com/HassamAli2174/DEX-Platform",
+      "cover": "assets/img/portfolio/web4.jpg",
+      "images": [
+        "assets/img/portfolio/web4.jpg",
+        "assets/img/portfolio/wpd3.jpg",
+        "assets/img/portfolio/wpd4.jpg",
+        "assets/img/portfolio/wpd5.jpg",
+        "assets/img/portfolio/wpd6.jpg",
+        "assets/img/portfolio/wpd7.jpg"
+      ],
+      "summary": "A decentralized exchange that brings trading, staking and asset management together.",
+      "description": [
+        "MikeToken.IO is a decentralized exchange (DEX) platform that integrates advanced financial tools with blockchain technology. Designed for both new and experienced users, it offers an intuitive interface that simplifies trading, staking and managing digital assets.",
+        "The goal is to drive innovation in DeFi with a platform that simplifies complex financial operations and introduces users to the possibilities of blockchain technology."
+      ],
+      "highlights": [
+        {
+          "title": "Connect Wallet",
+          "text": "Connect MetaMask, Coinbase Wallet or Binance Wallet and start trading immediately."
+        },
+        {
+          "title": "High Security and Trust",
+          "text": "End-to-end encryption and decentralized storage keep user assets safe."
+        },
+        {
+          "title": "Tokenomics and Rewards",
+          "text": "Competitive rates, low fees and reward programs that incentivize participation."
+        }
+      ],
+      "tech": [
+        "React",
+        "Web3",
+        "DeFi"
+      ]
+    },
+    {
+      "slug": "real-estate",
+      "title": "Real Estate Finder",
+      "category": "web",
+      "type": "Web Design",
+      "client": "ASU Company",
+      "date": "2023-03-01",
+      "url": "https://real-estate-us.netlify.app/",
+      "cover": "assets/img/portfolio/web1.jpg",
+      "images": [
+        "assets/img/portfolio/portfolio-details-1.jpg",
+        "assets/img/portfolio/portfolio-details-3.jpg",
+        "assets/img/portfolio/portfolio-details-2.jpg"
+      ],
+      "summary": "Search properties by location, price, type and bedrooms — built with ReactJS.",
+      "description": [
+        "Users can search for properties by location and filter results by price, type (house or apartment), number of bedrooms and place. A clean UI makes finding your dream home easier than ever.",
+        "The project covers ReactJS fundamentals — functional components, hooks such as useState, useEffect and useContext, React Icons and React Router — and works with a large property dataset. It is fully responsive across devices."
+      ],
+      "highlights": [],
+      "tech": [
+        "React",
+        "React Router",
+        "Responsive"
+      ]
+    }
+  ]
+}

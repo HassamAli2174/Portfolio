@@ -1,0 +1,158 @@
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.resume-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 32px 0 18px;
+  font: 700 22px var(--font-display);
+  color: var(--text);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  i {
+    color: var(--accent);
+  }
+}
+
+h4 {
+  font: 600 18px var(--font-display);
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.summary {
+  padding: 24px;
+
+  .role {
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  em {
+    color: var(--text-muted);
+  }
+}
+
+.contact,
+.highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 10px;
+    padding: 4px 0;
+    overflow-wrap: anywhere;
+  }
+
+  i {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+}
+
+.highlights {
+  padding: 20px 24px;
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    position: relative;
+    padding: 0 0 26px 26px;
+    border-left: 2px solid rgba(24, 210, 110, 0.35);
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px rgba(24, 210, 110, 0.15);
+    }
+  }
+
+  .period {
+    display: inline-block;
+    margin: 4px 0 10px;
+    padding: 3px 14px;
+    border-radius: 999px;
+    font: 600 13px var(--font-body);
+    color: #04140b;
+    background: var(--accent-gradient);
+  }
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  .company {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    align-items: center;
+  }
+
+  .location {
+    display: inline-flex;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-muted);
+
+    li {
+      padding: 3px 0;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .columns > div + div .resume-title:first-child {
+    margin-top: 32px;
+  }
+}

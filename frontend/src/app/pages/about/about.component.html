@@ -1,0 +1,97 @@
+@if (portfolio(); as data) {
+  @let p = data.profile;
+  <section class="page container">
+    <!-- About me -->
+    <div class="page-block">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>Learn more about me</p>
+      </div>
+
+      <div class="about-me">
+        <div class="photo">
+          <img [src]="p.photo" [alt]="'Portrait of ' + p.name" width="360" height="420" />
+        </div>
+
+        <div class="content">
+          <h3>{{ p.title }}</h3>
+          <p class="lead">{{ p.about }}</p>
+
+          <ul class="facts">
+            <li><i class="bi bi-cake2"></i><strong>Birthday</strong>{{ p.birthday | date: 'd MMMM y' }}</li>
+            <li><i class="bi bi-hourglass-split"></i><strong>Age</strong>{{ age() }}</li>
+            <li><i class="bi bi-mortarboard"></i><strong>Degree</strong>{{ p.degree }}</li>
+            <li><i class="bi bi-geo-alt"></i><strong>City</strong>{{ p.city }}</li>
+            <li>
+              <i class="bi bi-telephone"></i><strong>Phone</strong>
+              <a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a>
+            </li>
+            <li>
+              <i class="bi bi-envelope"></i><strong>Email</strong>
+              <a [href]="'mailto:' + p.email">{{ p.email }}</a>
+            </li>
+            <li>
+              <i class="bi bi-briefcase"></i><strong>Freelance</strong>
+              <span class="status">{{ p.freelance }}</span>
+            </li>
+            <li>
+              <i class="bi bi-file-earmark-person"></i><strong>Resume</strong>
+              <a [href]="p.resumeUrl" target="_blank" rel="noopener">Download PDF</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Counts -->
+    <div class="page-block counts">
+      @for (stat of data.stats; track stat.label) {
+        <div class="count-box card card-hover">
+          <i class="bi" [class]="stat.icon"></i>
+          <app-count-up class="value" [value]="stat.value" />
+          <p>{{ stat.label }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Skills -->
+    <div class="page-block">
+      <div class="section-title">
+        <h2>Skills</h2>
+        <p>What I work with</p>
+      </div>
+
+      <div class="skills">
+        @for (group of data.skillGroups; track group.name; let i = $index) {
+          <div class="skill-group card card-hover" [style.--i]="i">
+            <h3><i class="bi" [class]="group.icon"></i>{{ group.name }}</h3>
+            <ul>
+              @for (item of group.items; track item) {
+                <li class="chip">{{ item }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Interests -->
+    <div class="page-block">
+      <div class="section-title">
+        <h2>Interests</h2>
+        <p>Tools &amp; topics I enjoy</p>
+      </div>
+
+      <div class="interests">
+        @for (interest of data.interests; track interest.name; let i = $index) {
+          <div class="interest card card-hover" [style.--i]="i">
+            <i [class]="interest.icon" [style.color]="interest.color"></i>
+            <h3>{{ interest.name }}</h3>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+} @else {
+  <div class="loading-state"><div class="spinner" aria-label="Loading"></div></div>
+}

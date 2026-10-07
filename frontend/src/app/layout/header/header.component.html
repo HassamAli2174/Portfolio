@@ -1,0 +1,56 @@
+@if (profile(); as p) {
+  <header class="header">
+    <div class="container header-inner">
+      <div class="identity">
+        <h1><a routerLink="/" (click)="closeMenu()">{{ p.name }}</a></h1>
+
+        <h2 class="intro">
+          I'm a passionate <app-typewriter class="role" [words]="p.roles" /><br />
+          <span class="tagline">{{ p.tagline }}</span>
+        </h2>
+
+        <div class="cta">
+          <a class="btn" routerLink="/portfolio">View my work <i class="bi bi-arrow-right"></i></a>
+          <a class="btn btn-ghost" [href]="p.resumeUrl" target="_blank" rel="noopener">
+            <i class="bi bi-download"></i> Resume
+          </a>
+        </div>
+
+        <div class="social-links">
+          @for (social of p.socials; track social.url) {
+            <a [href]="social.url" target="_blank" rel="noopener" [attr.aria-label]="social.name" [title]="social.name">
+              <i class="bi" [class]="social.icon"></i>
+            </a>
+          }
+        </div>
+      </div>
+
+      <nav class="navbar" aria-label="Main">
+        <button
+          type="button"
+          class="menu-toggle"
+          [attr.aria-expanded]="menuOpen()"
+          aria-controls="nav-list"
+          aria-label="Toggle navigation"
+          (click)="toggleMenu()"
+        >
+          <i class="bi" [class.bi-list]="!menuOpen()" [class.bi-x]="menuOpen()"></i>
+        </button>
+
+        <ul id="nav-list">
+          @for (item of navItems; track item.path) {
+            <li>
+              <a
+                [routerLink]="item.path"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+                (click)="closeMenu()"
+                >{{ item.label }}</a
+              >
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+  </header>
+}
