@@ -18,8 +18,8 @@
     "email": "hassamarshad021@gmail.com",
     "freelance": "Available",
     "resumeUrl": "assets/Resume.pdf",
-    "about": "I am a Technical Consultant at Infotech, implementing, integrating and customizing Oracle FCC and Fusion Trade Innovation (FTI) for different banks. Alongside consulting, I contribute to an in-house core banking product built with Java, Spring Boot and Angular on a microservices architecture, including an event-sourced Import LC backend. Before banking, I spent two years shipping cross-platform Flutter apps for clients in Dubai and the USA.",
-    "summary": "Technical Consultant specialising in banking and trade finance systems (Oracle FCC, FTI, Finastra TI Plus 2). I combine hands-on core banking implementation with full-stack engineering in Java, Spring Boot and Angular, backed by a Computer Science degree from the University of Karachi (UBIT) and a background in cross-platform Flutter development.",
+    "about": "I am a Technical Consultant at Infotech, implementing, integrating and customizing Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI) for different banks. Alongside consulting, I contribute to an in-house core banking product built with Java, Spring Boot and Angular on a microservices architecture, including an event-sourced Import LC backend. Before banking, I spent two years shipping cross-platform Flutter apps for clients in Dubai and the USA.",
+    "summary": "Technical Consultant specialising in banking and trade finance systems (Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI)). I combine hands-on core banking implementation with full-stack engineering in Java, Spring Boot and Angular, backed by a Computer Science degree from the University of Karachi (UBIT) and a background in cross-platform Flutter development.",
     "socials": [
       {
         "name": "LinkedIn",
@@ -90,10 +90,12 @@
       "name": "Banking Platforms",
       "icon": "bi-bank",
       "items": [
-        "Oracle FCC",
+        "Oracle",
         "Fusion Trade Innovation (FTI)",
-        "Misys/Finastra TI Plus 2",
-        "IBM WebSphere"
+        "Fusion Corporate Channels (FCC)",
+        "IBM WebSphere",
+        "WebLogic",
+        "IBM MQ"
       ]
     },
     {
@@ -102,7 +104,7 @@
       "items": [
         "Oracle DB",
         "PostgreSQL",
-        "MySQL",
+        "SQL",
         "MongoDB",
         "Eureka",
         "Git",
@@ -115,6 +117,10 @@
       "items": [
         "Trade Finance (Import LC, Treasury, Charges)",
         "Event Sourcing & Microservices",
+        "NGINX",
+        "Docker",
+        "Kubernetes",
+        "Wildfly",
         "Core Banking Connectivity",
         "RESTful APIs",
         "Cross-Platform Apps",
@@ -136,9 +142,9 @@
       "color": "#18d26e"
     },
     {
-      "name": "Trade Finance",
-      "icon": "bi bi-globe-americas",
-      "color": "#12b3d6"
+      "name": "SQL",
+      "icon": "bi bi-database",
+      "color": "#18d26e"
     },
     {
       "name": "Java",
@@ -209,6 +215,21 @@
       "name": "Agile",
       "icon": "bi bi-arrow-repeat",
       "color": "#38b2ac"
+    },
+    {
+      "name": "Docker",
+      "icon": "bx bxl-docker",
+      "color": "#29b6f6"
+    },
+    {
+      "name": "Kubernetes",
+      "icon": "bx bxl-kubernetes",
+      "color": "#29b6f6"
+    },
+    {
+      "name": "Wildfly",
+      "icon": "bx bxl-wildfly",
+      "color": "#29b6f6"
     }
   ],
   "education": [
@@ -230,12 +251,12 @@
   ],
   "experience": [
     {
-      "role": "Technical Consultant — Banking Solutions (FCC, FTI)",
+      "role": "Technical Consultant — Banking Solutions",
       "period": "2025 - Present",
       "company": "Infotech Pvt Ltd",
       "location": "Karachi",
       "highlights": [
-        "Implement, integrate, migrate, and customize Oracle FCC and FTI across different banks.",
+        "Implement, integrate, migrate, and customize Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI) across different banks.",
         "Trained in FCC and FTI setup, installation, customization, and Oracle database administration; IBM MQ; document customization requirements for FCC 6.2.4.2 and FTI 2.10.5.0.",
         "Install and customize FCC 6.2.4.2, including Angular branding, localization, interfaces, and portlets, with core banking application connectivity.",
         "Contribute to an in-house core banking product built with Java, Spring Boot, and Angular, structured as microservices with a Eureka discovery server.",
@@ -254,7 +275,7 @@
       ]
     },
     {
-      "role": "Software Developer",
+      "role": "Associate Software Engineer",
       "period": "May 2023 - Nov 2023",
       "company": "The Innovative Solutions",
       "location": "USA",
@@ -264,7 +285,7 @@
       ]
     },
     {
-      "role": "Software Engineer",
+      "role": "Software Engineering Intern",
       "period": "Dec 2022 - Mar 2023",
       "company": "Fortify",
       "location": null,
