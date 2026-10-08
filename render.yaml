@@ -1,0 +1,20 @@
+# Render Blueprint for the Spring Boot API (free plan).
+# Render dashboard -> New -> Blueprint -> pick this repository.
+services:
+  - type: web
+    name: hassam-portfolio-api
+    runtime: docker
+    plan: free
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    healthCheckPath: /actuator/health
+    autoDeploy: true
+    # Only redeploy when the backend changes.
+    buildFilter:
+      paths:
+        - backend/**
+    envVars:
+      # Your Vercel domain(s), comma-separated; wildcards allowed,
+      # e.g. https://my-portfolio.vercel.app,https://my-portfolio-*.vercel.app
+      - key: PORTFOLIO_CORS_ORIGINS
+        sync: false

@@ -20,7 +20,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**").allowedOrigins(allowedOrigins).allowedMethods("GET", "POST");
+        // Patterns accept exact origins as well as wildcards such as https://my-site-*.vercel.app.
+        registry.addMapping("/api/**").allowedOriginPatterns(allowedOrigins).allowedMethods("GET", "POST");
     }
 
     /** Lets {@code ?category=Web} bind case-insensitively. */
