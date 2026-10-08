@@ -3,7 +3,7 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { TestBed } from '@angular/core/testing';
 
 import { Portfolio } from './portfolio.models';
-import { PortfolioService, yearsSince } from './portfolio.service';
+import { API_TIMEOUT_MS, PortfolioService, yearsSince } from './portfolio.service';
 
 const portfolio = {
   profile: { name: 'Test' },
@@ -18,6 +18,8 @@ describe('PortfolioService', () => {
   let http: HttpTestingController;
 
   beforeEach(() => {
+    // Before the service exists: it subscribes (and starts its timeout) on creation.
+    vi.useFakeTimers();
     TestBed.configureTestingModule({
       providers: [provideHttpClient(), provideHttpClientTesting()],
     });
@@ -25,7 +27,10 @@ describe('PortfolioService', () => {
     http = TestBed.inject(HttpTestingController);
   });
 
-  afterEach(() => http.verify());
+  afterEach(() => {
+    http.verify();
+    vi.useRealTimers();
+  });
 
   it('loads from the API, keeping the configured project order', () => {
     service.portfolio();
@@ -33,6 +38,16 @@ describe('PortfolioService', () => {
 
     expect(service.projects().map((p) => p.slug)).toEqual(['old', 'new']);
     expect(service.project('old')?.date).toBe('2023-01-01');
+  });
+
+  it('falls back to the bundled JSON when the API is too slow to answer', () => {
+    service.portfolio();
+    const apiRequest = http.expectOne('/api/portfolio');
+    vi.advanceTimersByTime(API_TIMEOUT_MS);
+
+    expect(apiRequest.cancelled).toBe(true);
+    http.expectOne('data/portfolio.json').flush(portfolio);
+    expect(service.profile()?.name).toBe('Test');
   });
 
   it('falls back to the bundled JSON when the API is down', () => {
