@@ -70,15 +70,46 @@ If the API is hosted on a different domain from the site, set `apiUrl` in
 [`frontend/src/environments/environment.ts`](frontend/src/environments/environment.ts)
 and add the site's origin to `PORTFOLIO_CORS_ORIGINS`.
 
-## Building for production
+## Deployment (free)
+
+| Part     | Host   | Config                         |
+| -------- | ------ | ------------------------------ |
+| Frontend | Vercel | [`vercel.json`](vercel.json)   |
+| Backend  | Render (free web service) | [`render.yaml`](render.yaml), [`backend/Dockerfile`](backend/Dockerfile) |
+
+Both redeploy automatically on every push to `main`.
+
+**Backend on Render (one-time setup)**
+
+1. Sign in at [render.com](https://render.com) with GitHub.
+2. **New → Blueprint**, pick this repository. Render reads `render.yaml`.
+3. When asked for `PORTFOLIO_CORS_ORIGINS`, enter your Vercel domain(s),
+   e.g. `https://my-portfolio.vercel.app,https://my-portfolio-*.vercel.app`.
+4. Wait for the first build, then open `https://<service>.onrender.com/actuator/health`.
+   It should return `{"status":"UP"}`.
+5. If Render gave the service a different URL than
+   `hassam-portfolio-api.onrender.com`, update the `/api` rewrite in `vercel.json`.
+6. Optional: add the `SPRING_MAIL_*` variables (see above) under
+   **Environment** so contact-form messages are emailed.
+
+**Frontend on Vercel**
+
+`vercel.json` builds `frontend/`, serves the result, proxies `/api/*` to
+Render and sends all other paths to `index.html` (so deep links work). In the
+Vercel project settings, keep **Root Directory** empty (the repository root)
+and use Node.js 22 or newer.
+
+The free Render service sleeps after 15 minutes without traffic and needs
+up to a minute to wake. The site doesn't wait: after 4 seconds it shows the
+content bundled at build time, and the request wakes the API for the
+contact form.
+
+## Building locally for production
 
 ```bash
 cd frontend && npm run build      # static files in frontend/dist/frontend/browser
 cd backend  && ./mvnw package     # runnable jar in backend/target
 ```
-
-The front end is a single-page app: configure the host to serve `index.html`
-for unknown paths so deep links like `/portfolio/texatube` work.
 
 ## Credits
 
