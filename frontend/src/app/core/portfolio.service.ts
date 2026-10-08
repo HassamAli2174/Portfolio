@@ -1,22 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, catchError, shareReplay } from 'rxjs';
+import { Observable, catchError, shareReplay, timeout } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { ContactMessage, Portfolio, Project, ProjectCategory } from './portfolio.models';
+
+/** How long to wait for the API before using the bundled content. */
+export const API_TIMEOUT_MS = 4000;
 
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
   private readonly http = inject(HttpClient);
 
   /**
-   * Loaded once from the API. If the API is unreachable (e.g. the site is hosted
-   * statically) we fall back to the copy of the same JSON bundled at build time.
+   * Loaded once from the API. If the API is unreachable or slow (a free-tier host
+   * waking from sleep can take ~a minute) we fall back to the copy of the same
+   * JSON bundled at build time. The request still wakes the API for the contact form.
    */
   private readonly portfolio$: Observable<Portfolio> = this.http
     .get<Portfolio>(`${environment.apiUrl}/api/portfolio`)
     .pipe(
+      timeout(API_TIMEOUT_MS),
       catchError(() => this.http.get<Portfolio>('data/portfolio.json')),
       shareReplay(1),
     );
