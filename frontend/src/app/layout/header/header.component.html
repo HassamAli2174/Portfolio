@@ -1,6 +1,13 @@
 @if (profile(); as p) {
   <header class="header">
-    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+    @if (!compact()) {
+      <!-- three.js is large, so the 3D scene loads only after the page has rendered. -->
+      <div class="scene">
+        @defer (on idle) {
+          <app-hero-scene [tags]="tags()" />
+        }
+      </div>
+    }
 
     <div class="container header-inner">
       <div class="identity">

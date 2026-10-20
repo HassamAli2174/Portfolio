@@ -1,0 +1,94 @@
+:host {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: scene-in 1.4s var(--ease) both;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes scene-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+/* Glass chips floating around the globe. */
+.tags {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+
+  li {
+    position: absolute;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font: 600 13px var(--font-display);
+    color: var(--text);
+    background: rgba(12, 14, 13, 0.55);
+    border: 1px solid rgba(24, 210, 110, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+    animation:
+      chip-in 0.8s var(--ease) both,
+      float 6s ease-in-out infinite;
+    animation-delay:
+      calc(0.6s + var(--i) * 0.12s),
+      calc(var(--i) * -1.1s);
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 8px var(--accent);
+      vertical-align: middle;
+    }
+  }
+
+  // Positions around the globe, clockwise from top-left.
+  li:nth-child(1) { top: 12%; left: 8%; }
+  li:nth-child(2) { top: 6%; right: 14%; }
+  li:nth-child(3) { top: 42%; right: 2%; }
+  li:nth-child(4) { bottom: 14%; right: 12%; }
+  li:nth-child(5) { bottom: 8%; left: 14%; }
+  li:nth-child(6) { top: 50%; left: 10%; }
+}
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    scale: 0.85;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+// Behind the text on smaller screens the chips would clutter it.
+@media (max-width: 992px) {
+  .tags {
+    display: none;
+  }
+}
