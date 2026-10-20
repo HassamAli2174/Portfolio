@@ -1,7 +1,12 @@
 @if (profile(); as p) {
   <header class="header">
+    <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
     <div class="container header-inner">
       <div class="identity">
+        @if (p.freelance === 'Available') {
+          <p class="badge"><span class="dot"></span> Available for freelance work</p>
+        }
         <h1><a routerLink="/" (click)="closeMenu()">{{ p.name }}</a></h1>
 
         <h2 class="intro">

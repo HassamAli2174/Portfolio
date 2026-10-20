@@ -208,6 +208,32 @@ img {
   background: var(--surface-strong);
 }
 
+/* Soft glow that follows the pointer across a card (--mx/--my set in page-effects.ts). */
+@media (hover: hover) {
+  .card {
+    position: relative;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      380px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(24, 210, 110, 0.13),
+      transparent 45%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .card:hover::after {
+    opacity: 1;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
