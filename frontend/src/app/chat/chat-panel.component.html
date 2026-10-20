@@ -1,0 +1,75 @@
+@let p = profile();
+<section class="panel" role="dialog" aria-labelledby="chat-title">
+  <header class="head">
+    <div class="avatar">
+      <img [src]="p.photo" alt="" width="40" height="40" />
+      <span class="online" aria-hidden="true"></span>
+    </div>
+    <div class="who">
+      <h2 id="chat-title">Ask about {{ p.name.split(' ')[0] }}</h2>
+      <p>Answers from this portfolio</p>
+    </div>
+    <button type="button" class="close" aria-label="Close chat" (click)="closed.emit()">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </header>
+
+  <div class="messages" #list aria-live="polite">
+    @for (message of messages(); track $index; let i = $index) {
+      @if (message.from === 'user') {
+        <div class="bubble user">{{ message.text }}</div>
+      } @else if (message.reply; as reply) {
+        <div class="bubble bot">
+          @for (paragraph of reply.text.split('\n\n'); track $index) {
+            <p>{{ paragraph }}</p>
+          }
+          @if (reply.items?.length) {
+            <ul>
+              @for (item of reply.items; track $index) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          }
+          @if (reply.links?.length) {
+            <div class="links">
+              @for (link of reply.links; track link.url) {
+                @if (isInternal(link)) {
+                  @let r = route(link);
+                  <a [routerLink]="r.path" [queryParams]="r.query">{{ link.label }} <i class="bi bi-arrow-right"></i></a>
+                } @else {
+                  <a [href]="link.url" target="_blank" rel="noopener">
+                    {{ link.label }} <i class="bi bi-box-arrow-up-right"></i>
+                  </a>
+                }
+              }
+            </div>
+          }
+        </div>
+        @if (isLast(i) && reply.suggestions?.length && !typing()) {
+          <div class="suggestions">
+            @for (suggestion of reply.suggestions; track suggestion) {
+              <button type="button" (click)="ask(suggestion)">{{ suggestion }}</button>
+            }
+          </div>
+        }
+      }
+    }
+    @if (typing()) {
+      <div class="bubble bot typing" aria-label="Typing">
+        <span></span><span></span><span></span>
+      </div>
+    }
+  </div>
+
+  <form class="composer" (submit)="send($event)">
+    <input
+      #box
+      type="text"
+      placeholder="Ask about skills, projects, experience…"
+      aria-label="Your question"
+      maxlength="300"
+      autocomplete="off"
+    />
+    <button type="submit" aria-label="Send"><i class="bi bi-send-fill"></i></button>
+  </form>
+</section>

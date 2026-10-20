@@ -18,11 +18,12 @@ const portfolio = {
 } as unknown as Portfolio;
 
 describe('App', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [App],
       providers: [provideRouter(routes), { provide: PORTFOLIO_CONTENT, useValue: portfolio }],
     });
+    await TestBed.compileComponents();
   });
 
   it('renders the owner name from the content in the header', async () => {
