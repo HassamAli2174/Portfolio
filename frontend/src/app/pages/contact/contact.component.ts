@@ -1,7 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { ContactService } from '../../core/contact.service';
 import { PortfolioService } from '../../core/portfolio.service';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
@@ -14,10 +14,11 @@ type Field = 'name' | 'email' | 'subject' | 'message';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  private readonly portfolioService = inject(PortfolioService);
-  protected readonly profile = this.portfolioService.profile;
+  private readonly contactService = inject(ContactService);
+  protected readonly profile = inject(PortfolioService).profile;
+  /** 'mailto' until a Web3Forms access key is configured. */
+  protected readonly mode = this.contactService.mode;
 
-  // Limits mirror ContactRequest on the backend.
   protected readonly form = inject(NonNullableFormBuilder).group({
     name: ['', [Validators.required, Validators.maxLength(100)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(254)]],
@@ -27,7 +28,6 @@ export class ContactComponent {
   });
 
   protected readonly status = signal<Status>('idle');
-  protected readonly errorMessage = signal('');
 
   protected submit(): void {
     if (this.form.invalid) {
@@ -35,42 +35,23 @@ export class ContactComponent {
       return;
     }
     this.status.set('sending');
-    this.portfolioService.sendMessage(this.form.getRawValue()).subscribe({
+    this.contactService.send(this.form.getRawValue()).subscribe({
       next: () => {
         this.status.set('sent');
         this.form.reset();
       },
-      error: (error: HttpErrorResponse) => this.handleError(error),
+      error: () => this.status.set('error'),
     });
   }
 
-  /** Message for a field, preferring the server's when it rejected the value. */
   protected fieldError(field: Field): string | null {
     const control = this.form.controls[field];
     if (!control.touched || control.valid) return null;
     const errors = control.errors ?? {};
-    if (errors['server']) return errors['server'];
     if (errors['required']) return 'This field is required.';
     if (errors['email']) return 'Please enter a valid email address.';
     if (errors['minlength']) return `Please write at least ${errors['minlength'].requiredLength} characters.`;
     if (errors['maxlength']) return `Please keep it under ${errors['maxlength'].requiredLength} characters.`;
     return 'Please check this field.';
-  }
-
-  private handleError(error: HttpErrorResponse): void {
-    this.status.set('error');
-    const serverErrors: Record<string, string> | undefined = error.error?.errors;
-    if (error.status === 400 && serverErrors) {
-      for (const [field, message] of Object.entries(serverErrors)) {
-        const control = this.form.get(field);
-        control?.setErrors({ server: message });
-        control?.markAsTouched();
-      }
-      this.errorMessage.set('Please check the highlighted fields.');
-    } else {
-      this.errorMessage.set(
-        error.error?.detail ?? 'Your message could not be sent right now. Please email me directly.',
-      );
-    }
   }
 }

@@ -1,10 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { InjectionToken, Injectable, computed, inject, signal } from '@angular/core';
-import { Observable } from 'rxjs';
 
-import { environment } from '../../environments/environment';
 import content from '../data/portfolio.json';
-import { ContactMessage, Portfolio, Project, ProjectCategory } from './portfolio.models';
+import { Portfolio, Project, ProjectCategory } from './portfolio.models';
 
 /**
  * All site content, compiled into the app from src/app/data/portfolio.json.
@@ -18,18 +15,12 @@ export const PORTFOLIO_CONTENT = new InjectionToken<Portfolio>('PORTFOLIO_CONTEN
 
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
-  private readonly http = inject(HttpClient);
-
   readonly portfolio = signal(inject(PORTFOLIO_CONTENT)).asReadonly();
   readonly profile = computed(() => this.portfolio().profile);
   readonly projects = computed(() => this.portfolio().projects);
 
   project(slug: string): Project | undefined {
     return this.projects().find((p) => p.slug === slug);
-  }
-
-  sendMessage(message: ContactMessage): Observable<unknown> {
-    return this.http.post(`${environment.apiUrl}/api/contact`, message);
   }
 }
 

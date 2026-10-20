@@ -85,10 +85,20 @@
     <div class="actions" aria-live="polite">
       @switch (status()) {
         @case ('sent') {
-          <p class="notice success"><i class="bi bi-check-circle"></i> Your message has been sent. Thank you!</p>
+          <p class="notice success">
+            <i class="bi bi-check-circle"></i>
+            @if (mode === 'mailto') {
+              Your email app should have opened with the message ready to send.
+            } @else {
+              Your message has been sent. Thank you!
+            }
+          </p>
         }
         @case ('error') {
-          <p class="notice failure"><i class="bi bi-exclamation-triangle"></i> {{ errorMessage() }}</p>
+          <p class="notice failure">
+            <i class="bi bi-exclamation-triangle"></i> Your message could not be sent right now. Please email me at
+            <a [href]="'mailto:' + p.email">{{ p.email }}</a>.
+          </p>
         }
       }
       <button class="btn" type="submit" [disabled]="status() === 'sending'">
