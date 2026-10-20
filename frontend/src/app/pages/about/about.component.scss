@@ -170,6 +170,14 @@
     text-align: center;
   }
 
+  .logo {
+    width: 30px;
+    height: 30px;
+    margin: 0 1px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
   h3 {
     margin: 0;
     font: 500 16px var(--font-heading);

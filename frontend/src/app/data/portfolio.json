@@ -115,15 +115,16 @@
       "name": "Development Areas",
       "icon": "bi-diagram-3",
       "items": [
-        "Trade Finance (Import LC, Treasury, Charges)",
+        "Cross-Platform Apps",
         "Event Sourcing & Microservices",
+        "RESTful APIs",
+        "Customize Development",
+        "Trade Finance",
         "NGINX",
         "Docker",
         "Kubernetes",
         "Wildfly",
         "Core Banking Connectivity",
-        "RESTful APIs",
-        "Cross-Platform Apps",
         "UI/UX",
         "Firebase Integration"
       ]
@@ -228,8 +229,13 @@
     },
     {
       "name": "Wildfly",
-      "icon": "bx bxl-wildfly",
+      "icon": "bi bi-hdd-stack",
       "color": "#29b6f6"
+    },
+    {
+      "name": "Redis",
+      "icon": "assets/img/icons/redis.svg",
+      "color": "#d82c20"
     }
   ],
   "education": [

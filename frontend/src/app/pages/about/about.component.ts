@@ -16,4 +16,9 @@ export class AboutComponent {
     const birthday = this.portfolio()?.profile.birthday;
     return birthday ? yearsSince(birthday) : null;
   });
+
+  /** Interest icons can be an icon-font class or a path/URL to a logo image. */
+  protected isImage(icon: string): boolean {
+    return /\.(svg|png|webp|jpe?g)$/i.test(icon);
+  }
 }

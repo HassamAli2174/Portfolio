@@ -85,7 +85,11 @@
     <div class="interests">
       @for (interest of data.interests; track interest.name; let i = $index) {
         <div class="interest card card-hover" [style.--i]="i">
-          <i [class]="interest.icon" [style.color]="interest.color"></i>
+          @if (isImage(interest.icon)) {
+            <img class="logo" [src]="interest.icon" alt="" width="30" height="30" />
+          } @else {
+            <i [class]="interest.icon" [style.color]="interest.color"></i>
+          }
           <h3>{{ interest.name }}</h3>
         </div>
       }
