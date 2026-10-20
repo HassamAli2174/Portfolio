@@ -22,10 +22,12 @@
           <li><i class="bi bi-hourglass-split"></i><strong>Age</strong>{{ age() }}</li>
           <li><i class="bi bi-mortarboard"></i><strong>Degree</strong>{{ p.degree }}</li>
           <li><i class="bi bi-geo-alt"></i><strong>City</strong>{{ p.city }}</li>
-          <li>
-            <i class="bi bi-telephone"></i><strong>Phone</strong>
-            <a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a>
-          </li>
+          @if (p.phone) {
+            <li>
+              <i class="bi bi-telephone"></i><strong>Phone</strong>
+              <a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a>
+            </li>
+          }
           <li>
             <i class="bi bi-envelope"></i><strong>Email</strong>
             <a [href]="'mailto:' + p.email">{{ p.email }}</a>

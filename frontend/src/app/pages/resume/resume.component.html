@@ -18,9 +18,11 @@
         <p><em>{{ p.summary }}</em></p>
         <ul class="contact">
           <li><i class="bi bi-geo-alt"></i>{{ p.address }}</li>
-          <li>
-            <i class="bi bi-telephone"></i><a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a>
-          </li>
+          @if (p.phone) {
+            <li>
+              <i class="bi bi-telephone"></i><a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a>
+            </li>
+          }
           <li><i class="bi bi-envelope"></i><a [href]="'mailto:' + p.email">{{ p.email }}</a></li>
         </ul>
       </div>

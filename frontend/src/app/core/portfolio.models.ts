@@ -18,7 +18,8 @@ export interface Profile {
   degree: string;
   city: string;
   address: string;
-  phone: string;
+  /** Optional: leave out to hide the phone number everywhere. */
+  phone?: string | null;
   email: string;
   freelance: string;
   resumeUrl: string;

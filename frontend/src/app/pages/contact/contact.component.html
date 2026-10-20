@@ -27,11 +27,13 @@
       <h3>Email Me</h3>
       <p><a [href]="'mailto:' + p.email">{{ p.email }}</a></p>
     </div>
-    <div class="info-box card card-hover" appReveal [revealDelay]="3">
-      <i class="bi bi-telephone"></i>
-      <h3>Call Me</h3>
-      <p><a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a></p>
-    </div>
+    @if (p.phone) {
+      <div class="info-box card card-hover" appReveal [revealDelay]="3">
+        <i class="bi bi-telephone"></i>
+        <h3>Call Me</h3>
+        <p><a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a></p>
+      </div>
+    }
   </div>
 
   <form class="card contact-form" appReveal [revealDelay]="2" [formGroup]="form" (ngSubmit)="submit()" novalidate>

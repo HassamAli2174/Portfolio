@@ -151,6 +151,12 @@ describe('ChatEngine', () => {
     expect(ask('Is Ada available for freelance?').text).toContain('available for freelance work');
   });
 
+  it('leaves the phone out of contact details when none is set', () => {
+    const noPhone = new ChatEngine({ ...portfolio, profile: { ...portfolio.profile, phone: undefined } });
+    const items = noPhone.reply('What is your phone number?').items ?? [];
+    expect(items).toEqual(['Email: ada@example.com', 'Location: London, UK']);
+  });
+
   it('answers education and location', () => {
     expect(ask('Which university?').items).toEqual(['BSc Computer Science, UCL (2010 - 2014)']);
     expect(ask('Where is Ada based?').text).toContain('based in London, UK');

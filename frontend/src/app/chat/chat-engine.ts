@@ -395,7 +395,7 @@ export class ChatEngine {
     const p = this.data.profile;
     return {
       text: `You can reach ${this.first} here:`,
-      items: [`Email: ${p.email}`, `Phone: ${p.phone}`, `Location: ${p.city}`],
+      items: [`Email: ${p.email}`, ...(p.phone ? [`Phone: ${p.phone}`] : []), `Location: ${p.city}`],
       links: this.contactLinks(),
     };
   }
