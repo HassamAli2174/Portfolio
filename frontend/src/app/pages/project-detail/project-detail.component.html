@@ -1,6 +1,4 @@
-@if (!loaded()) {
-  <div class="loading-state"><div class="spinner" aria-label="Loading"></div></div>
-} @else if (project(); as project) {
+@if (project(); as project) {
   <article class="page container">
     <a class="back" routerLink="/portfolio"><i class="bi bi-arrow-left"></i> All projects</a>
 

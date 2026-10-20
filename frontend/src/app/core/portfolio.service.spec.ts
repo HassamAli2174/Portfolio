@@ -1,9 +1,8 @@
-import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
+import content from '../data/portfolio.json';
 import { Portfolio } from './portfolio.models';
-import { API_TIMEOUT_MS, PortfolioService, yearsSince } from './portfolio.service';
+import { PORTFOLIO_CONTENT, PortfolioService, yearsSince } from './portfolio.service';
 
 const portfolio = {
   profile: { name: 'Test' },
@@ -14,48 +13,32 @@ const portfolio = {
 } as unknown as Portfolio;
 
 describe('PortfolioService', () => {
-  let service: PortfolioService;
-  let http: HttpTestingController;
+  it('serves the provided content, keeping the configured project order', () => {
+    TestBed.configureTestingModule({ providers: [{ provide: PORTFOLIO_CONTENT, useValue: portfolio }] });
+    const service = TestBed.inject(PortfolioService);
 
-  beforeEach(() => {
-    // Before the service exists: it subscribes (and starts its timeout) on creation.
-    vi.useFakeTimers();
-    TestBed.configureTestingModule({
-      providers: [provideHttpClient(), provideHttpClientTesting()],
-    });
-    service = TestBed.inject(PortfolioService);
-    http = TestBed.inject(HttpTestingController);
-  });
-
-  afterEach(() => {
-    http.verify();
-    vi.useRealTimers();
-  });
-
-  it('loads from the API, keeping the configured project order', () => {
-    service.portfolio();
-    http.expectOne('/api/portfolio').flush(portfolio);
-
+    expect(service.profile().name).toBe('Test');
     expect(service.projects().map((p) => p.slug)).toEqual(['old', 'new']);
     expect(service.project('old')?.date).toBe('2023-01-01');
+    expect(service.project('missing')).toBeUndefined();
   });
 
-  it('falls back to the bundled JSON when the API is too slow to answer', () => {
-    service.portfolio();
-    const apiRequest = http.expectOne('/api/portfolio');
-    vi.advanceTimersByTime(API_TIMEOUT_MS);
+  it('defaults to the bundled portfolio.json', () => {
+    const service = TestBed.inject(PortfolioService);
+    expect(service.profile().name).toBe(content.profile.name);
+  });
+});
 
-    expect(apiRequest.cancelled).toBe(true);
-    http.expectOne('data/portfolio.json').flush(portfolio);
-    expect(service.profile()?.name).toBe('Test');
+describe('bundled portfolio.json', () => {
+  it('has unique project slugs', () => {
+    const slugs = content.projects.map((p) => p.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it('falls back to the bundled JSON when the API is down', () => {
-    service.portfolio();
-    http.expectOne('/api/portfolio').flush(null, { status: 504, statusText: 'Gateway Timeout' });
-    http.expectOne('data/portfolio.json').flush(portfolio);
-
-    expect(service.profile()?.name).toBe('Test');
+  it('only uses known project categories', () => {
+    for (const project of content.projects) {
+      expect(['web', 'mobile', 'desktop']).toContain(project.category);
+    }
   });
 });
 

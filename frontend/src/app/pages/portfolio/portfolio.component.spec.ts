@@ -1,9 +1,8 @@
-import { provideHttpClient } from '@angular/common/http';
-import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
 import { Portfolio, Project } from '../../core/portfolio.models';
+import { PORTFOLIO_CONTENT } from '../../core/portfolio.service';
 import { ProjectDetailComponent } from '../project-detail/project-detail.component';
 import { PortfolioComponent } from './portfolio.component';
 
@@ -29,9 +28,8 @@ const portfolio = {
 
 function setup() {
   TestBed.configureTestingModule({
-    providers: [provideRouter([]), provideHttpClient(), provideHttpClientTesting()],
+    providers: [provideRouter([]), { provide: PORTFOLIO_CONTENT, useValue: portfolio }],
   });
-  return TestBed.inject(HttpTestingController);
 }
 
 function titles(element: HTMLElement): string[] {
@@ -40,10 +38,9 @@ function titles(element: HTMLElement): string[] {
 
 describe('PortfolioComponent', () => {
   it('shows every project and a filter per category in use', async () => {
-    const http = setup();
+    setup();
     const fixture = TestBed.createComponent(PortfolioComponent);
     fixture.detectChanges();
-    http.expectOne('/api/portfolio').flush(portfolio);
     await fixture.whenStable();
 
     const el = fixture.nativeElement as HTMLElement;
@@ -53,11 +50,10 @@ describe('PortfolioComponent', () => {
   });
 
   it('filters by the category query parameter', async () => {
-    const http = setup();
+    setup();
     const fixture = TestBed.createComponent(PortfolioComponent);
     fixture.componentRef.setInput('category', 'web');
     fixture.detectChanges();
-    http.expectOne('/api/portfolio').flush(portfolio);
     await fixture.whenStable();
 
     expect(titles(fixture.nativeElement)).toEqual(['ALPHA', 'GAMMA']);
@@ -66,11 +62,10 @@ describe('PortfolioComponent', () => {
 
 describe('ProjectDetailComponent', () => {
   it('renders the project with wrap-around neighbours', async () => {
-    const http = setup();
+    setup();
     const fixture = TestBed.createComponent(ProjectDetailComponent);
     fixture.componentRef.setInput('slug', 'alpha');
     fixture.detectChanges();
-    http.expectOne('/api/portfolio').flush(portfolio);
     await fixture.whenStable();
 
     const el = fixture.nativeElement as HTMLElement;
@@ -80,11 +75,10 @@ describe('ProjectDetailComponent', () => {
   });
 
   it('shows a not-found message for an unknown slug', async () => {
-    const http = setup();
+    setup();
     const fixture = TestBed.createComponent(ProjectDetailComponent);
     fixture.componentRef.setInput('slug', 'missing');
     fixture.detectChanges();
-    http.expectOne('/api/portfolio').flush(portfolio);
     await fixture.whenStable();
 
     expect(fixture.nativeElement.querySelector('h2')?.textContent).toBe('Project not found');

@@ -3,13 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "sync-content": "node scripts/sync-content.mjs",
-    "prestart": "npm run sync-content",
     "start": "ng serve",
-    "prebuild": "npm run sync-content",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "pretest": "npm run sync-content",
     "test": "ng test"
   },
   "private": true,

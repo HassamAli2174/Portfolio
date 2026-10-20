@@ -1,41 +1,26 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, computed, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, catchError, shareReplay, timeout } from 'rxjs';
+import { InjectionToken, Injectable, computed, inject, signal } from '@angular/core';
 
-import { environment } from '../../environments/environment';
-import { ContactMessage, Portfolio, Project, ProjectCategory } from './portfolio.models';
+import content from '../data/portfolio.json';
+import { Portfolio, Project, ProjectCategory } from './portfolio.models';
 
-/** How long to wait for the API before using the bundled content. */
-export const API_TIMEOUT_MS = 4000;
+/**
+ * All site content, compiled into the app from src/app/data/portfolio.json.
+ * Edit that file to update the portfolio; no server is involved.
+ * Tests provide their own content through this token.
+ */
+export const PORTFOLIO_CONTENT = new InjectionToken<Portfolio>('PORTFOLIO_CONTENT', {
+  providedIn: 'root',
+  factory: () => content as Portfolio,
+});
 
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
-  private readonly http = inject(HttpClient);
-
-  /**
-   * Loaded once from the API. If the API is unreachable or slow (a free-tier host
-   * waking from sleep can take ~a minute) we fall back to the copy of the same
-   * JSON bundled at build time. The request still wakes the API for the contact form.
-   */
-  private readonly portfolio$: Observable<Portfolio> = this.http
-    .get<Portfolio>(`${environment.apiUrl}/api/portfolio`)
-    .pipe(
-      timeout(API_TIMEOUT_MS),
-      catchError(() => this.http.get<Portfolio>('data/portfolio.json')),
-      shareReplay(1),
-    );
-
-  readonly portfolio = toSignal(this.portfolio$);
-  readonly profile = computed(() => this.portfolio()?.profile);
-  readonly projects = computed(() => this.portfolio()?.projects ?? []);
+  readonly portfolio = signal(inject(PORTFOLIO_CONTENT)).asReadonly();
+  readonly profile = computed(() => this.portfolio().profile);
+  readonly projects = computed(() => this.portfolio().projects);
 
   project(slug: string): Project | undefined {
     return this.projects().find((p) => p.slug === slug);
-  }
-
-  sendMessage(message: ContactMessage): Observable<unknown> {
-    return this.http.post(`${environment.apiUrl}/api/contact`, message);
   }
 }
 
