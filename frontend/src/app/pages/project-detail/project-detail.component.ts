@@ -19,7 +19,6 @@ export class ProjectDetailComponent {
   /** Bound from the `:slug` route parameter. */
   readonly slug = input.required<string>();
 
-  protected readonly loaded = computed(() => !!this.portfolioService.portfolio());
   protected readonly labels = CATEGORY_LABELS;
   protected readonly icons = CATEGORY_ICONS;
 

@@ -24,7 +24,6 @@ export class PortfolioComponent {
   /** Bound from the `?category=` query parameter. */
   readonly category = input<string>();
 
-  protected readonly loaded = computed(() => !!this.portfolioService.portfolio());
   protected readonly labels = CATEGORY_LABELS;
   protected readonly icons = CATEGORY_ICONS;
 

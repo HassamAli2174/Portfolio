@@ -3,6 +3,7 @@ import { HttpTestingController, provideHttpClientTesting } from '@angular/common
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Portfolio } from '../../core/portfolio.models';
+import { PORTFOLIO_CONTENT } from '../../core/portfolio.service';
 import { ContactComponent } from './contact.component';
 
 const portfolio = {
@@ -16,11 +17,12 @@ describe('ContactComponent', () => {
   let el: HTMLElement;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({ providers: [provideHttpClient(), provideHttpClientTesting()] });
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting(), { provide: PORTFOLIO_CONTENT, useValue: portfolio }],
+    });
     http = TestBed.inject(HttpTestingController);
     fixture = TestBed.createComponent(ContactComponent);
     fixture.detectChanges();
-    http.expectOne('/api/portfolio').flush(portfolio);
     await fixture.whenStable();
     el = fixture.nativeElement;
   });
