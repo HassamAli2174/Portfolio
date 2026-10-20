@@ -3,10 +3,11 @@ import { DatePipe } from '@angular/common';
 
 import { PortfolioService, yearsSince } from '../../core/portfolio.service';
 import { CountUpComponent } from '../../shared/count-up.component';
+import { RevealDirective } from '../../shared/reveal.directive';
 
 @Component({
   selector: 'app-about',
-  imports: [DatePipe, CountUpComponent],
+  imports: [RevealDirective, DatePipe, CountUpComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })

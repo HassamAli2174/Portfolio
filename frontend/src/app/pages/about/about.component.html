@@ -46,7 +46,7 @@
   <!-- Counts -->
   <div class="page-block counts">
     @for (stat of data.stats; track stat.label) {
-      <div class="count-box card card-hover">
+      <div class="count-box card card-hover" appReveal [revealDelay]="$index">
         <i class="bi" [class]="stat.icon"></i>
         <app-count-up class="value" [value]="stat.value" />
         <p>{{ stat.label }}</p>
@@ -63,7 +63,7 @@
 
     <div class="skills">
       @for (group of data.skillGroups; track group.name; let i = $index) {
-        <div class="skill-group card card-hover" [style.--i]="i">
+        <div class="skill-group card card-hover" appReveal [revealDelay]="i">
           <h3><i class="bi" [class]="group.icon"></i>{{ group.name }}</h3>
           <ul>
             @for (item of group.items; track item) {
@@ -84,7 +84,7 @@
 
     <div class="interests">
       @for (interest of data.interests; track interest.name; let i = $index) {
-        <div class="interest card card-hover" [style.--i]="i">
+        <div class="interest card card-hover" appReveal [revealDelay]="i">
           @if (isImage(interest.icon)) {
             <img class="logo" [src]="interest.icon" alt="" width="30" height="30" />
           } @else {

@@ -12,7 +12,7 @@
   <div class="columns">
     <div>
       <h3 class="resume-title"><i class="bi bi-person-badge"></i> Summary</h3>
-      <div class="card summary">
+      <div class="card summary" appReveal>
         <h4>{{ p.name }}</h4>
         <p class="role">{{ p.title }}</p>
         <p><em>{{ p.summary }}</em></p>
@@ -27,7 +27,7 @@
 
       @if (data.highlights.length) {
         <h3 class="resume-title"><i class="bi bi-stars"></i> Highlights</h3>
-        <ul class="card highlights">
+        <ul class="card highlights" appReveal [revealDelay]="1">
           @for (highlight of data.highlights; track highlight) {
             <li><i class="bi bi-check2-circle"></i>{{ highlight }}</li>
           }
@@ -37,7 +37,7 @@
       <h3 class="resume-title"><i class="bi bi-mortarboard"></i> Education</h3>
       <ol class="timeline">
         @for (item of data.education; track item.title) {
-          <li>
+          <li appReveal [revealDelay]="$index">
             <h4>{{ item.title }}</h4>
             <span class="period">{{ item.period }}</span>
             <p><em>{{ item.institution }}</em></p>
@@ -50,7 +50,7 @@
       <h3 class="resume-title"><i class="bi bi-briefcase"></i> Work Experience</h3>
       <ol class="timeline">
         @for (job of data.experience; track job.company + job.period) {
-          <li>
+          <li appReveal [revealDelay]="$index">
             <h4>{{ job.role }}</h4>
             <span class="period">{{ job.period }}</span>
             <p class="company">

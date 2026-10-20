@@ -119,8 +119,6 @@
 
 .skill-group {
   padding: 22px 24px;
-  animation: page-in 0.5s var(--ease) both;
-  animation-delay: calc(var(--i) * 60ms);
 
   h3 {
     display: flex;

@@ -56,8 +56,6 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  animation: page-in 0.5s var(--ease) both;
-  animation-delay: calc(var(--i) * 60ms);
 }
 
 .media {

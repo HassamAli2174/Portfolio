@@ -19,7 +19,7 @@
 
   <div class="grid projects">
     @for (project of visible(); track project.slug; let i = $index) {
-      <article class="project card card-hover" [style.--i]="i">
+      <article class="project card card-hover" appReveal [revealDelay]="i % 3">
         <div class="media">
           <app-project-cover [project]="project" />
           <div class="overlay">

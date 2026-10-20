@@ -3,13 +3,14 @@ import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angula
 
 import { ContactService } from '../../core/contact.service';
 import { PortfolioService } from '../../core/portfolio.service';
+import { RevealDirective } from '../../shared/reveal.directive';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 type Field = 'name' | 'email' | 'subject' | 'message';
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule],
+  imports: [RevealDirective, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

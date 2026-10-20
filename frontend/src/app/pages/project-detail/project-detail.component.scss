@@ -229,8 +229,6 @@
 
 .highlight {
   padding: 20px 22px;
-  animation: page-in 0.5s var(--ease) both;
-  animation-delay: calc(var(--i) * 60ms);
 
   h4 {
     display: flex;

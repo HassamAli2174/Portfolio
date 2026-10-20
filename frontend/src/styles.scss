@@ -125,6 +125,31 @@ img {
   }
 }
 
+/* Scroll reveal (RevealDirective). An animation, not a transition, so it
+   doesn't clash with the hover transitions cards already have. */
+.reveal:not(.revealed) {
+  opacity: 0;
+}
+
+.reveal.revealed {
+  animation: reveal-in 0.7s var(--ease) both;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    translate: 0 28px;
+    scale: 0.98;
+  }
+}
+
+/* Cross-fade between routes (router withViewTransitions). */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
 .page-block + .page-block {
   margin-top: 70px;
 }
@@ -252,6 +277,7 @@ img {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }

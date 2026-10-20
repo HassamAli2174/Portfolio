@@ -6,12 +6,12 @@
   </div>
 
   <div class="info-grid">
-    <div class="info-box card card-hover">
+    <div class="info-box card card-hover" appReveal [revealDelay]="0">
       <i class="bi bi-geo-alt"></i>
       <h3>My Address</h3>
       <p>{{ p.address }}</p>
     </div>
-    <div class="info-box card card-hover">
+    <div class="info-box card card-hover" appReveal [revealDelay]="1">
       <i class="bi bi-share"></i>
       <h3>Social Profiles</h3>
       <div class="social-links">
@@ -22,19 +22,19 @@
         }
       </div>
     </div>
-    <div class="info-box card card-hover">
+    <div class="info-box card card-hover" appReveal [revealDelay]="2">
       <i class="bi bi-envelope"></i>
       <h3>Email Me</h3>
       <p><a [href]="'mailto:' + p.email">{{ p.email }}</a></p>
     </div>
-    <div class="info-box card card-hover">
+    <div class="info-box card card-hover" appReveal [revealDelay]="3">
       <i class="bi bi-telephone"></i>
       <h3>Call Me</h3>
       <p><a [href]="'tel:' + p.phone.replaceAll(' ', '')">{{ p.phone }}</a></p>
     </div>
   </div>
 
-  <form class="card contact-form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <form class="card contact-form" appReveal [revealDelay]="2" [formGroup]="form" (ngSubmit)="submit()" novalidate>
     <h3>Send me a message</h3>
 
     <div class="row">

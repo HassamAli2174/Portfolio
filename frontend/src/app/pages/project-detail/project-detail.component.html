@@ -92,7 +92,7 @@
         <h3 class="sub-title">Key features</h3>
         <div class="highlights">
           @for (highlight of project.highlights; track highlight.title; let i = $index) {
-            <div class="highlight card card-hover" [style.--i]="i">
+            <div class="highlight card card-hover" appReveal [revealDelay]="i">
               <h4><i class="bi bi-check2-circle"></i>{{ highlight.title }}</h4>
               <p>{{ highlight.text }}</p>
             </div>

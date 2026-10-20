@@ -5,6 +5,7 @@ import { ProjectCategory } from '../../core/portfolio.models';
 import { CATEGORY_LABELS, PortfolioService } from '../../core/portfolio.service';
 import { LightboxComponent } from '../../shared/lightbox.component';
 import { CATEGORY_ICONS, ProjectCoverComponent } from '../../shared/project-cover.component';
+import { RevealDirective } from '../../shared/reveal.directive';
 
 interface Filter {
   id: ProjectCategory | null;
@@ -14,7 +15,7 @@ interface Filter {
 
 @Component({
   selector: 'app-portfolio',
-  imports: [RouterLink, LightboxComponent, ProjectCoverComponent],
+  imports: [RevealDirective, RouterLink, LightboxComponent, ProjectCoverComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
 })
