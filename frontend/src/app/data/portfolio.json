@@ -1,13 +1,11 @@
 {
   "profile": {
     "name": "Hassam Arshad",
-    "title": "Technical Consultant — Banking & Trade Finance Systems",
+    "title": "Technical Consultant",
     "tagline": "building reliable banking, trade finance and cross-platform software.",
     "roles": [
-      "Technical Consultant",
-      "Java & Spring Boot Developer",
-      "Angular Developer",
-      "Flutter Developer"
+      "Software Engineer",
+      "Technical Consultant"
     ],
     "photo": "assets/img/me.jpeg",
     "birthday": "2002-04-04",
@@ -18,7 +16,7 @@
     "email": "hassamarshad021@gmail.com",
     "freelance": "Available",
     "resumeUrl": "assets/Resume.pdf",
-    "about": "I am a Technical Consultant at Infotech, implementing, integrating and customizing Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI) for different banks. Alongside consulting, I contribute to an in-house core banking product built with Java, Spring Boot and Angular on a microservices architecture, including an event-sourced Import LC backend. Before banking, I spent two years shipping cross-platform Flutter apps for clients in Dubai and the USA.",
+    "about": "I am a Technical Consultant at Infotech, implementing, integrating and customizing Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI) for different banks. Alongside consulting, I contribute to an in-house core banking product built with Java, Spring Boot and Angular on a microservices architecture, including an event-sourced backend. Before Consultancy, I spent over two years shipping cross-platform Flutter apps for clients in Dubai and the USA.",
     "summary": "Technical Consultant specialising in banking and trade finance systems (Fusion Corporate Channels (FCC) and Fusion Trade Innovation (FTI)). I combine hands-on core banking implementation with full-stack engineering in Java, Spring Boot and Angular, backed by a Computer Science degree from the University of Karachi (UBIT) and a background in cross-platform Flutter development.",
     "socials": [
       {
@@ -240,6 +238,11 @@
   ],
   "education": [
     {
+      "title": "Master's in Data Science",
+      "period": "CSIT",
+      "institution": "NED University of Engineering and Technology"
+    },
+    {
       "title": "Bachelor's in Computer Science",
       "period": "2021 - 2024",
       "institution": "University of Karachi (UBIT)"
@@ -257,7 +260,7 @@
   ],
   "experience": [
     {
-      "role": "Technical Consultant — Banking Solutions",
+      "role": "Technical Consultant",
       "period": "2025 - Present",
       "company": "Infotech Pvt Ltd",
       "location": "Karachi",
