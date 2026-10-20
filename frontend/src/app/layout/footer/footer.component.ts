@@ -54,6 +54,8 @@ import { NAV_ITEMS } from '../nav-items';
       gap: 24px;
     }
     .name {
+      display: inline-block;
+      padding-block: 4px;
       font: 700 22px var(--font-display);
       color: var(--text);
     }
@@ -68,6 +70,8 @@ import { NAV_ITEMS } from '../nav-items';
       gap: 8px 22px;
     }
     nav a {
+      display: inline-block;
+      padding: 8px 0;
       color: var(--text-muted);
       font: 500 14px var(--font-display);
     }
@@ -112,6 +116,12 @@ import { NAV_ITEMS } from '../nav-items';
     .top {
       cursor: pointer;
       font-size: 16px;
+    }
+    /* Keep the bottom row clear of the floating chat button on phones. */
+    @media (max-width: 576px) {
+      .footer {
+        padding-bottom: 92px;
+      }
     }
   `,
 })

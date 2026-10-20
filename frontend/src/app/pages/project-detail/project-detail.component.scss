@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding-block: 8px;
   margin-bottom: 22px;
   color: var(--text-muted);
   font: 600 14px var(--font-display);
@@ -294,7 +295,8 @@
 
 @media (max-width: 992px) {
   .layout {
-    grid-template-columns: 1fr;
+    // minmax(0, …): without it the thumbnail strip forces the page wider than the screen.
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .info {
