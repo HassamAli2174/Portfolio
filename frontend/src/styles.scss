@@ -208,6 +208,19 @@ img {
   background: var(--surface-strong);
 }
 
+/* 3D tilt towards the pointer (--rx/--ry set in page-effects.ts). */
+@media (hover: hover) {
+  .card-hover:hover,
+  .tilt:hover {
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-6px);
+    transition-duration: 0.15s;
+  }
+
+  .tilt {
+    transition: transform 0.35s var(--ease);
+  }
+}
+
 /* Soft glow that follows the pointer across a card (--mx/--my set in page-effects.ts). */
 @media (hover: hover) {
   .card {
