@@ -173,7 +173,7 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  .info-grid,
+  /* .info-grid sizes itself (auto-fit), so only the name/email row needs help. */
   .row {
     grid-template-columns: 1fr;
   }

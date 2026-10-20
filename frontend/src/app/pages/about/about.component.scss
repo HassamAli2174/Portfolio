@@ -184,28 +184,47 @@
 
 /* ---------- Responsive ---------- */
 
+/* Tablets: photo and text stay side by side, with a smaller photo. */
 @media (max-width: 992px) {
-  .counts {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
   .about-me {
-    grid-template-columns: 1fr;
-  }
-
-  .photo {
-    max-width: 320px;
+    grid-template-columns: minmax(0, 240px) 1fr;
+    gap: 28px;
   }
 
   .facts {
     grid-template-columns: 1fr;
   }
+
+  .counts {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (max-width: 480px) {
-  .counts {
+/* Phones: one column with the photo centred. */
+@media (max-width: 600px) {
+  .about-me {
     grid-template-columns: 1fr;
+  }
+
+  .photo {
+    width: min(100%, 300px);
+    margin-inline: auto;
+  }
+
+  /* Two counters per row even on small phones, so the list stays short. */
+  .counts {
+    gap: 14px;
+  }
+
+  .count-box {
+    padding: 22px 12px 18px;
+
+    .value {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 12px;
+    }
   }
 }
