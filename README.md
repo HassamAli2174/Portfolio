@@ -18,6 +18,18 @@ Edit it, push, and the site updates. No HTML changes needed.
 - A project with `"cover": null` gets a generated placeholder cover.
 - Projects appear in the order they are listed.
 - Replace `frontend/public/assets/Resume.pdf` to update the downloadable resume.
+- Interest icons can be a Bootstrap Icons / Boxicons class (`bi bi-…`, `bx bxl-…`) or
+  a path to a logo image such as `assets/img/icons/redis.svg`.
+
+## Chat assistant
+
+The "Ask me anything" button opens an assistant that answers visitors'
+questions about skills, experience, projects, education, contact details and
+the resume. It reads the same `portfolio.json`, so it stays up to date when
+you edit the content. It runs entirely in the browser: no API key, no server,
+no cost. The logic is in
+[`frontend/src/app/chat/chat-engine.ts`](frontend/src/app/chat/chat-engine.ts);
+add entries to `ALIASES` there if visitors use other names for a technology.
 
 ## Contact form
 
