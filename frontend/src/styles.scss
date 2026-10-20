@@ -106,6 +106,25 @@ img {
 
 /* ---------- Shared building blocks ---------- */
 
+/* Very large screens (QHD / 4K / ultrawide): scale everything up proportionally. */
+@media (min-width: 1900px) {
+  html {
+    zoom: 1.15;
+  }
+}
+
+@media (min-width: 2400px) {
+  html {
+    zoom: 1.35;
+  }
+}
+
+@media (min-width: 3200px) {
+  html {
+    zoom: 1.8;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1140px;

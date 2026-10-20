@@ -13,38 +13,95 @@
   transition: min-height 0.5s var(--ease);
 }
 
-/* 3D globe: right half of the hero on wide screens, dimmed behind the text below that. */
+/*
+ * Hero layouts:
+ * 1. Wide landscape screens: text on the left, 3D globe on the right half.
+ * 2. Phones, small tablets and portrait tablets: text first, globe below it
+ *    in normal flow, so the two never overlap however short the screen is.
+ * 3. Short landscape phones: a compact side-by-side version of (1).
+ */
 .scene {
   position: absolute;
   z-index: -1;
+  // Percentages of the header rather than vw, so this lines up with the
+  // container even when very large screens scale the page with zoom.
   top: 0;
   bottom: 0;
-  right: max(0px, calc((100vw - 1180px) / 2));
-  width: min(54vw, 660px);
+  right: max(0px, calc((100% - 1180px) / 2));
+  width: min(54%, 660px);
+  // Roughly square and vertically centred, so the skill chips stay near the globe.
+  height: min(100%, 720px);
+  margin-block: auto;
   pointer-events: none;
 }
 
-@media (min-width: 993px) {
+@media (min-width: 993px) and (orientation: landscape) {
   :host(:not(.compact)) .identity,
   :host(:not(.compact)) .navbar {
     max-width: 47%;
   }
 }
 
-/* Smaller screens: text on top, globe underneath. */
-@media (max-width: 992px) {
+@media (max-width: 992px), (orientation: portrait) and (max-width: 1366px) {
   :host(:not(.compact)) .header {
-    align-items: flex-start;
-    padding-top: 90px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 90px 0 24px;
   }
 
-  .scene {
-    top: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: auto;
-    height: 42vh;
+  :host(:not(.compact)) .scene {
+    position: relative;
+    order: 2;
+    inset: auto;
+    width: 100%;
+    height: clamp(260px, 42vh, 560px);
+    margin: 12px 0 0;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  :host(:not(.compact)) .header {
+    flex-direction: row;
+    align-items: center;
+    padding: 64px 0 20px;
+  }
+
+  :host(:not(.compact)) .scene {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 45%;
+    height: auto;
+    margin: 0;
+  }
+
+  :host(:not(.compact)) .identity,
+  :host(:not(.compact)) .navbar {
+    max-width: 56%;
+  }
+
+  :host(:not(.compact)) {
+    h1 {
+      font-size: 34px;
+    }
+
+    .badge {
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .cta,
+    .social-links {
+      margin-top: 16px;
+    }
+
+    .navbar {
+      margin-top: 18px;
+    }
   }
 }
 
@@ -113,6 +170,12 @@ h1 {
   a,
   a:hover {
     color: var(--text);
+  }
+
+  // Comfortable tap target without changing the look.
+  a {
+    display: inline-block;
+    padding-block: 5px;
   }
 }
 
@@ -184,7 +247,7 @@ h1 {
   a {
     position: relative;
     display: inline-block;
-    padding: 6px 0;
+    padding: 10px 0;
     font: 600 16px var(--font-display);
     color: var(--text-muted);
 

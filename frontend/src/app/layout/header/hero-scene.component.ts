@@ -154,15 +154,17 @@ export class HeroSceneComponent {
     glowCanvas.width = glowCanvas.height = 128;
     const ctx = glowCanvas.getContext('2d')!;
     const gradient = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
+    // Fully transparent well before the sprite edge, so the glow never shows a hard edge
+    // where the canvas cuts it off.
     gradient.addColorStop(0, 'rgba(24, 210, 110, 0.35)');
-    gradient.addColorStop(0.5, 'rgba(18, 179, 214, 0.12)');
-    gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    gradient.addColorStop(0.4, 'rgba(18, 179, 214, 0.12)');
+    gradient.addColorStop(0.75, 'rgba(0, 0, 0, 0)');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 128, 128);
     const halo = new THREE.Sprite(
       track(new THREE.SpriteMaterial({ map: track(new THREE.CanvasTexture(glowCanvas)), depthWrite: false })),
     );
-    halo.scale.setScalar(7.5);
+    halo.scale.setScalar(6);
     halo.position.z = -1;
     scene.add(halo);
 
