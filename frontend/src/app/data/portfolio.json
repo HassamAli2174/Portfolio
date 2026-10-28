@@ -312,13 +312,23 @@
       "type": "Banking / Trade Finance",
       "client": "Infotech Pvt Ltd (in-house)",
       "date": null,
-      "url": null,
-      "cover": null,
-      "images": [],
+      "url": "https://trade-finance-system-gray.vercel.app/login",
+      "cover": "assets/img/portfolio/tfs-dashboard.jpg",
+      "images": [
+        "assets/img/portfolio/tfs-dashboard.jpg",
+        "assets/img/portfolio/tfs-dashboard-dark.jpg",
+        "assets/img/portfolio/tfs-import-lc-records.jpg",
+        "assets/img/portfolio/tfs-import-lc-preview.jpg",
+        "assets/img/portfolio/tfs-import-lc-form.jpg",
+        "assets/img/portfolio/tfs-admin-dashboard.jpg",
+        "assets/img/portfolio/tfs-login.jpg"
+      ],
       "summary": "An event-sourced Import LC backend inside a Spring Boot microservices platform.",
       "description": [
         "A trade finance backend with an event-sourced Import LC module, built as part of a Spring Boot microservices architecture with a Eureka discovery server and an Angular front end.",
-        "Every change to a Letter of Credit is stored as an event, so the full history of an LC can be replayed and any two versions compared field by field."
+        "Every change to a Letter of Credit is stored as an event, so the full history of an LC can be replayed and any two versions compared field by field.",
+        "The Angular portal covers Import LCs, shipping guarantees, export collections, undertakings and fund transfers, plus an admin area for masters, users, roles and dynamic fields. It supports light and dark themes.",
+        "The live demo runs the Angular front end with sample data and an in-browser mock backend. Pick one of the demo accounts on the login page to sign in as a corporate user, an administrator or a bank officer."
       ],
       "highlights": [
         {
