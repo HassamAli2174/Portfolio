@@ -48,7 +48,7 @@
     },
     {
       "icon": "bi-journal-richtext",
-      "value": 12,
+      "value": 14,
       "label": "Projects"
     },
     {
@@ -350,6 +350,102 @@
         "Angular",
         "Event Sourcing",
         "Eureka"
+      ]
+    },
+    {
+      "slug": "najem-al-shaheen",
+      "title": "Najem Al Shaheen — Heavy Equipment Repair",
+      "category": "web",
+      "type": "Business Website",
+      "client": "Najem Al Shaheen Repairing of Equipment (UAE)",
+      "date": null,
+      "url": "https://najemalshaheen.netlify.app/",
+      "cover": "assets/img/portfolio/nas-hero.jpg",
+      "images": [
+        "assets/img/portfolio/nas-hero.jpg",
+        "assets/img/portfolio/nas-about.jpg",
+        "assets/img/portfolio/nas-services.jpg",
+        "assets/img/portfolio/nas-workshop.jpg",
+        "assets/img/portfolio/nas-contact.jpg",
+        "assets/img/portfolio/nas-mobile.jpg"
+      ],
+      "summary": "A bold, industrial website for a UAE workshop that repairs motors, generators, control panels, chillers and heavy machinery.",
+      "description": [
+        "Najem Al Shaheen repairs and maintains the machines that keep facilities, sites and fleets running: motor and alternator rewinding, generator overhauls, PLC and control-panel repair, chiller and AC maintenance, fabrication and heavy-machinery service.",
+        "The single-page Angular site gives the workshop a strong online presence with a dark, technical look: an animated motor-winding graphic in the hero, the services grouped into three trades, a gallery of real jobs from the shop floor, and one-tap calling for breakdowns."
+      ],
+      "highlights": [
+        {
+          "title": "Three Trades, One Shop",
+          "text": "Electrical, Fabrication & Mechanical, and Heavy-Duty Machinery services presented as switchable tabs."
+        },
+        {
+          "title": "Real Work Gallery",
+          "text": "Photos from the workshop: motor rewinding, lathe work, rotor service, generators, panel repair and installation."
+        },
+        {
+          "title": "WhatsApp Enquiries",
+          "text": "The quote form turns the visitor’s name, phone and job details into a ready-to-send WhatsApp message."
+        },
+        {
+          "title": "Built for Phones",
+          "text": "Responsive layout with a call-now button for urgent breakdown call-outs."
+        }
+      ],
+      "tech": [
+        "Angular 19",
+        "TypeScript",
+        "Responsive Design",
+        "WhatsApp Integration",
+        "Netlify"
+      ]
+    },
+    {
+      "slug": "gulora",
+      "title": "Gulora — Herbs & Jewels",
+      "category": "web",
+      "type": "E-commerce Storefront",
+      "client": "Gulora · Herbs & Jewels",
+      "date": null,
+      "url": "https://gulora.netlify.app/",
+      "cover": "assets/img/portfolio/gulora-home.jpg",
+      "images": [
+        "assets/img/portfolio/gulora-home.jpg",
+        "assets/img/portfolio/gulora-collection.jpg",
+        "assets/img/portfolio/gulora-shop.jpg",
+        "assets/img/portfolio/gulora-product.jpg",
+        "assets/img/portfolio/gulora-story.jpg",
+        "assets/img/portfolio/gulora-mobile.jpg"
+      ],
+      "summary": "An elegant storefront for a handmade herbal hair, skin and body-care brand, with ordering through WhatsApp.",
+      "description": [
+        "Gulora makes small-batch herbal products: a shampoo with more than 25 herbs, a skin-care serum and handmade herbal soaps. The site presents the brand with a soft, premium look and makes ordering as simple as sending a message.",
+        "Built with Angular, it has a home page, a shop with category filters, a page for each product, the brand story, contact, FAQ, shipping & returns and privacy pages, and a switch between dark and light themes."
+      ],
+      "highlights": [
+        {
+          "title": "Order on WhatsApp",
+          "text": "Every product has an order button that opens WhatsApp with the product and chosen size already written in."
+        },
+        {
+          "title": "Product Pages",
+          "text": "Size options (500 ml or 20 ml tester), quantity, benefits and customer reviews for each product."
+        },
+        {
+          "title": "Shop with Filters",
+          "text": "Hair care, skin care and bath & body categories with shareable filter links."
+        },
+        {
+          "title": "Light & Dark Themes",
+          "text": "A theme switch in the header, with both themes styled to match the brand."
+        }
+      ],
+      "tech": [
+        "Angular 20",
+        "TypeScript",
+        "Responsive Design",
+        "WhatsApp Ordering",
+        "Netlify"
       ]
     },
     {
